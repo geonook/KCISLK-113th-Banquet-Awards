@@ -36,6 +36,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 4,
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/812dbcf5-62c6-44c4-b2c3-a10b5c54f6a9.jpg",
       department: "探索教育中心",
       awardType: "15年資獎",
       recipientName: "葉郁庭",

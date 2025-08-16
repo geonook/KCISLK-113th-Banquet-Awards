@@ -7,15 +7,31 @@ import { RockAwardSlide } from "../components/rock-award-slide"
 import { ExcellenceAwardSlide } from "../components/excellence-award-slide"
 import { FullscreenNavigation } from "../components/fullscreen-navigation"
 import { PresentationContainer } from "../components/presentation-container"
-import { finalAwardData } from "../data/final-awards"
-import { EnhancedPhotoManagement } from "../components/enhanced-photo-management"
+import { awardLoader } from "../lib/award-loader"
 import { Settings } from "lucide-react"
+import type { AwardData } from "../types/award"
 
 export default function AwardPresentation() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [awardData, setAwardData] = useState(finalAwardData)
+  const [awardData, setAwardData] = useState<AwardData | null>(null)
   const [showPhotoPanel, setShowPhotoPanel] = useState(false)
-  const totalSlides = awardData.winners.length + 1
+  const [isLoading, setIsLoading] = useState(true)
+  const totalSlides = awardData ? awardData.winners.length + 1 : 1
+
+  // 懶載入獎項資料
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const data = await awardLoader.loadAwardData()
+        setAwardData(data)
+      } catch (error) {
+        console.error('Failed to load award data:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    loadData()
+  }, [])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides)
@@ -99,11 +115,35 @@ export default function AwardPresentation() {
   }, [])
 
   const renderSlide = () => {
+    if (isLoading) {
+      return (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="text-white text-2xl">載入中...</div>
+        </div>
+      )
+    }
+
+    if (!awardData) {
+      return (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="text-white text-2xl">無法載入獎項資料</div>
+        </div>
+      )
+    }
+
     if (currentSlide === 0) {
       return <PremiumTitleSlide title={awardData.title} subtitle={awardData.subtitle} />
     }
 
     const winner = awardData.winners[currentSlide - 1]
+    if (!winner) {
+      return (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="text-white text-2xl">獲獎者資料不存在</div>
+        </div>
+      )
+    }
+
     const awardType = getAwardType(winner.awardType)
 
     // 根據獎項類型選擇適當的組件
@@ -122,17 +162,16 @@ export default function AwardPresentation() {
   return (
     <>
       {/* 隱藏的照片管理按鈕 - 右下角小圖標 */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <EnhancedPhotoManagement
-          winners={awardData.winners}
-          onPhotoUpdate={handlePhotoUpdate}
-          triggerButton={
-            <button className="w-8 h-8 bg-gray-800/30 hover:bg-gray-700/60 text-gray-500 hover:text-white rounded-full flex items-center justify-center transition-all duration-200 opacity-20 hover:opacity-100 backdrop-blur-sm">
-              <Settings className="w-4 h-4" />
-            </button>
-          }
-        />
-      </div>
+      {awardData && (
+        <div className="fixed bottom-4 right-4 z-50">
+          <button 
+            className="w-8 h-8 bg-gray-800/30 hover:bg-gray-700/60 text-gray-500 hover:text-white rounded-full flex items-center justify-center transition-all duration-200 opacity-20 hover:opacity-100 backdrop-blur-sm"
+            onClick={() => console.log('Photo management coming soon')}
+          >
+            <Settings className="w-4 h-4" />
+          </button>
+        </div>
+      )}
 
       <PresentationContainer>
         <div className="relative w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black">
@@ -140,15 +179,17 @@ export default function AwardPresentation() {
             {renderSlide()}
           </div>
 
-          <FullscreenNavigation
-            currentSlide={currentSlide}
-            totalSlides={totalSlides}
-            winners={awardData.winners}
-            onPrevious={previousSlide}
-            onNext={nextSlide}
-            onGoToStart={goToStart}
-            onGoToSlide={goToSlide}
-          />
+          {awardData && (
+            <FullscreenNavigation
+              currentSlide={currentSlide}
+              totalSlides={totalSlides}
+              winners={awardData.winners}
+              onPrevious={previousSlide}
+              onNext={nextSlide}
+              onGoToStart={goToStart}
+              onGoToSlide={goToSlide}
+            />
+          )}
         </div>
       </PresentationContainer>
     </>

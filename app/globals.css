@@ -153,6 +153,34 @@
     animation: spin-reverse 25s linear infinite;
   }
 
+  .animate-float-heart {
+    animation: float-heart 2s ease-out forwards;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .animate-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-music-wave {
+    animation: music-wave 1.5s ease-in-out infinite;
+  }
+
+  .animate-stage-light {
+    animation: stage-light 3s ease-in-out infinite;
+  }
+
+  .animate-performance-glow {
+    animation: performance-glow 2s ease-in-out infinite;
+  }
+
   /* Hover effects */
   .hover\:scale-105:hover {
     transform: scale(1.05);
@@ -168,6 +196,39 @@
 
   .hover\:scale-130:hover {
     transform: scale(1.3);
+  }
+
+  .hover\:scale-150:hover {
+    transform: scale(1.5);
+  }
+
+  /* Interactive cursor effects */
+  .cursor-pointer:hover {
+    cursor: pointer;
+  }
+
+  /* Group hover effects */
+  .group:hover .group-hover\:animate-bounce {
+    animation: bounce 1s infinite;
+  }
+
+  .group:hover .group-hover\:scale-125 {
+    transform: scale(1.25);
+  }
+
+  /* Magic sparkle effect on hover */
+  .hover-sparkle:hover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: sparkle 1s ease-out;
+    pointer-events: none;
   }
 }
 
@@ -187,9 +248,47 @@
     transform: scaleX(0);
   }
 
+  .animate-float-heart {
+    opacity: 1;
+  }
+
   /* Smooth transitions */
   * {
     transition: all 0.2s ease-in-out;
+  }
+
+  /* Special hover effects for delightful interactions */
+  .thanksgiving-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .thanksgiving-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Floating animation for hearts */
+  .float-heart {
+    animation: float-heart 2s ease-out forwards;
+  }
+
+  /* Pulsing glow effect */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Radial gradient utility */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 140, 0, 0.6);
+    }
   }
 
   /* Print styles */
@@ -330,5 +429,104 @@
   }
   to {
     transform: rotate(-360deg);
+  }
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50px) scale(1.2) rotate(10deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.8) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.3);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes music-wave {
+  0%, 100% {
+    height: 20px;
+    opacity: 0.4;
+  }
+  50% {
+    height: 60px;
+    opacity: 0.8;
+  }
+}
+
+@keyframes stage-light {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes performance-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 140, 0, 0.6), 0 0 60px rgba(255, 100, 0, 0.4);
   }
 }
