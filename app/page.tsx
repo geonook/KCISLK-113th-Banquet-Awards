@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { PremiumTitleSlide } from "../components/premium-title-slide"
 import { ServiceAwardSlide } from "../components/service-award-slide"
 import { RockAwardSlide } from "../components/rock-award-slide"
@@ -8,6 +8,7 @@ import { ExcellenceAwardSlide } from "../components/excellence-award-slide"
 import { FullscreenNavigation } from "../components/fullscreen-navigation"
 import { PresentationContainer } from "../components/presentation-container"
 import { awardLoader } from "../lib/award-loader"
+import { EnhancedPhotoManagement } from "../components/enhanced-photo-management"
 import { Settings } from "lucide-react"
 import type { AwardData } from "../types/award"
 
@@ -33,23 +34,23 @@ export default function AwardPresentation() {
     loadData()
   }, [])
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides)
-  }
+  }, [totalSlides])
 
-  const previousSlide = () => {
+  const previousSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)
-  }
+  }, [totalSlides])
 
-  const goToStart = () => {
+  const goToStart = useCallback(() => {
     setCurrentSlide(0)
-  }
+  }, [])
 
-  const goToSlide = (slideIndex: number) => {
+  const goToSlide = useCallback((slideIndex: number) => {
     if (slideIndex >= 0 && slideIndex < totalSlides) {
       setCurrentSlide(slideIndex)
     }
-  }
+  }, [totalSlides])
 
   // 判斷獎項類型
   const getAwardType = (awardType: string) => {
@@ -69,10 +70,13 @@ export default function AwardPresentation() {
 
   // 添加照片更新函數
   const handlePhotoUpdate = (winnerId: number, photoUrl: string) => {
-    setAwardData((prev) => ({
-      ...prev,
-      winners: prev.winners.map((winner) => (winner.id === winnerId ? { ...winner, photoUrl } : winner)),
-    }))
+    setAwardData((prev) => {
+      if (!prev) return prev
+      return {
+        ...prev,
+        winners: prev.winners.map((winner) => (winner.id === winnerId ? { ...winner, photoUrl } : winner)),
+      }
+    })
   }
 
   // 檢測全螢幕狀態
@@ -112,7 +116,7 @@ export default function AwardPresentation() {
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [])
+  }, [nextSlide, previousSlide, goToStart, setShowPhotoPanel])
 
   const renderSlide = () => {
     if (isLoading) {
@@ -164,12 +168,15 @@ export default function AwardPresentation() {
       {/* 隱藏的照片管理按鈕 - 右下角小圖標 */}
       {awardData && (
         <div className="fixed bottom-4 right-4 z-50">
-          <button 
-            className="w-8 h-8 bg-gray-800/30 hover:bg-gray-700/60 text-gray-500 hover:text-white rounded-full flex items-center justify-center transition-all duration-200 opacity-20 hover:opacity-100 backdrop-blur-sm"
-            onClick={() => console.log('Photo management coming soon')}
-          >
-            <Settings className="w-4 h-4" />
-          </button>
+          <EnhancedPhotoManagement
+            winners={awardData.winners}
+            onPhotoUpdate={handlePhotoUpdate}
+            triggerButton={
+              <button className="w-8 h-8 bg-gray-800/30 hover:bg-gray-700/60 text-gray-500 hover:text-white rounded-full flex items-center justify-center transition-all duration-200 opacity-20 hover:opacity-100 backdrop-blur-sm">
+                <Settings className="w-4 h-4" />
+              </button>
+            }
+          />
         </div>
       )}
 
