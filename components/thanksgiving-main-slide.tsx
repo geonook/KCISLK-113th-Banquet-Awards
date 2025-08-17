@@ -135,7 +135,7 @@ export function ThanksgivingMainSlide({
               className="text-xl font-bold tracking-wider text-white drop-shadow-lg"
               style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
             >
-              感恩同行 共創未來
+七年同心 點石成金
             </p>
           </div>
         </div>
@@ -150,7 +150,7 @@ export function ThanksgivingMainSlide({
               className="text-lg font-bold italic text-white drop-shadow-lg tracking-wide"
               style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
             >
-              Grateful Together, Creating the Future
+We started with rock - seven years on - we shine like gold
             </p>
           </div>
         </div>
@@ -235,26 +235,6 @@ export function ThanksgivingMainSlide({
                   </div>
                 </div>
 
-                {/* 感恩理念 */}
-                <div className="mt-8 space-y-4 animate-slide-up" style={{ animationDelay: "2.6s" }}>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200 shadow-sm">
-                      <div className="text-2xl mb-2">🙏</div>
-                      <p className="font-bold text-blue-800 mb-1">感恩師長</p>
-                      <p className="text-sm text-blue-600">Grateful for Teachers</p>
-                    </div>
-                    <div className="text-center p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200 shadow-sm">
-                      <div className="text-2xl mb-2">🤝</div>
-                      <p className="font-bold text-green-800 mb-1">感恩同窗</p>
-                      <p className="text-sm text-green-600">Grateful for Peers</p>
-                    </div>
-                    <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border border-purple-200 shadow-sm">
-                      <div className="text-2xl mb-2">💫</div>
-                      <p className="font-bold text-purple-800 mb-1">感恩成長</p>
-                      <p className="text-sm text-purple-600">Grateful for Growth</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

@@ -317,7 +317,7 @@ export default function AwardPresentation() {
       case 'first-half-title':
         return (
           <PremiumTitleSlide 
-            title="優秀員工頒獎典禮 - 上半場" 
+            title="優秀同仁頒獎 (1)" 
             subtitle="Excellence in Education Awards - First Half" 
           />
         )
@@ -325,7 +325,7 @@ export default function AwardPresentation() {
       case 'second-half-title':
         return (
           <PremiumTitleSlide 
-            title="優秀員工頒獎典禮 - 下半場" 
+            title="優秀同仁頒獎 (2)" 
             subtitle="Excellence in Education Awards - Second Half" 
           />
         )

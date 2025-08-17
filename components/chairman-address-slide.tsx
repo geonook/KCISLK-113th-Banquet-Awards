@@ -83,7 +83,7 @@ export function ChairmanAddressSlide({
               className="text-xl font-bold tracking-wider text-white drop-shadow-lg"
               style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
             >
-              承先啟後 繼往開來
+七年同心 點石成金
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export function ChairmanAddressSlide({
               className="text-lg font-bold italic text-white drop-shadow-lg tracking-wide"
               style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
             >
-              Leading Forward, Building Tomorrow
+We started with rock - seven years on - we shine like gold
             </p>
           </div>
         </div>
