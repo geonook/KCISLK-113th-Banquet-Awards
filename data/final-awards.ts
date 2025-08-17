@@ -60,6 +60,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 7,
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/0e063767-b747-4946-8711-4fda856fbd0a.jpg",
       department: "小學國際處",
       awardType: "10 Years of Service Award",
       recipientName: "Mitchell David James",
@@ -67,6 +68,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 8,
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/bd5b65d0-6f66-453a-8285-aa63188b678a.jpg",
       department: "小學教務處",
       awardType: "磐石獎",
       recipientName: "黃于庭",
