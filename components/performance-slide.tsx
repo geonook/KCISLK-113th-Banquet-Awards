@@ -197,33 +197,6 @@ export function PerformanceSlide({
       </div>
 
 
-      {/* 表演者名單 */}
-      {performers.length > 0 && (
-        <div className="absolute bottom-36 left-12 z-20 animate-slide-right" style={{ animationDelay: "1.2s" }}>
-          <div className="relative">
-            <div className={`absolute inset-0 bg-gradient-to-r ${config.bgGradient} rounded-2xl blur-xl`} />
-            <div className="relative px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl max-w-md">
-              <p className="text-lg font-bold text-white mb-2 drop-shadow-lg">
-                表演者 / Performers
-              </p>
-              <div className="space-y-1">
-                {performers.map((performer, index) => (
-                  <p
-                    key={index}
-                    className="text-sm text-white/90 drop-shadow-md animate-slide-up"
-                    style={{ 
-                      animationDelay: `${1.4 + index * 0.1}s`,
-                      textShadow: "0 1px 2px rgba(0,0,0,0.5)"
-                    }}
-                  >
-                    {performer}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* 主要內容區域 */}
       {showContent && (
