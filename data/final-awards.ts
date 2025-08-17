@@ -44,6 +44,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 5,
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/5ba302d6-b373-42d7-88f8-a691ef68f2b5.jpeg",
       department: "小學教務處",
       awardType: "10年資獎",
       recipientName: "江志軒",
