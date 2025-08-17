@@ -15,23 +15,19 @@ interface FullscreenNavigationProps {
   onGoToSlide?: (slideIndex: number) => void
 }
 
-// 線性簡報段落定義
-interface PresentationSection {
+// 獎項類型跳轉定義
+interface AwardSection {
   name: string
-  slideIndex: number
+  awardType: string
   icon: any
   color: string
-  shortcut: string
 }
 
-// 主要段落配置
-const presentationSections: PresentationSection[] = [
-  { name: "主頁", slideIndex: 0, icon: Home, color: "text-blue-300 hover:bg-blue-500/20", shortcut: "1" },
-  { name: "小提琴", slideIndex: 1, icon: Music, color: "text-purple-300 hover:bg-purple-500/20", shortcut: "2" },
-  { name: "董事長致詞", slideIndex: 2, icon: Mic, color: "text-green-300 hover:bg-green-500/20", shortcut: "3" },
-  { name: "上半場頒獎", slideIndex: 4, icon: Award, color: "text-yellow-300 hover:bg-yellow-500/20", shortcut: "4" },
-  { name: "用餐", slideIndex: 19, icon: Utensils, color: "text-orange-300 hover:bg-orange-500/20", shortcut: "6" },
-  { name: "歡敬", slideIndex: 59, icon: PartyPopper, color: "text-pink-300 hover:bg-pink-500/20", shortcut: "7" }
+// 獎項分類按鈕配置
+const awardSections: AwardSection[] = [
+  { name: "年資獎", awardType: "service", icon: Award, color: "text-blue-300 hover:bg-blue-500/20" },
+  { name: "磐石獎", awardType: "rock", icon: Heart, color: "text-green-300 hover:bg-green-500/20" },
+  { name: "優質獎", awardType: "excellence", icon: Award, color: "text-yellow-300 hover:bg-yellow-500/20" }
 ]
 
 export function FullscreenNavigation({
@@ -45,32 +41,33 @@ export function FullscreenNavigation({
 }: FullscreenNavigationProps) {
   const [isHovered, setIsHovered] = useState(false)
 
-  // 段落跳轉處理
-  const handleSectionJump = (slideIndex: number) => {
-    if (onGoToSlide && slideIndex >= 0 && slideIndex < totalSlides) {
+  // 獎項跳轉處理
+  const handleAwardJump = (awardType: string) => {
+    if (!onGoToSlide || !winners.length) return
+    
+    // 找到第一個符合獎項類型的得獎者在線性流程中的位置
+    const getAwardTypeSlideIndex = (type: string) => {
+      if (type === "service") {
+        // 年資獎在上半場獎項中，從第5個投影片開始（索引4）
+        return 5 // 第一個年資獎位置
+      } else if (type === "rock") {
+        // 磐石獎也在上半場，需要找到第一個磐石獎位置
+        const firstRockIndex = winners.findIndex(w => w.awardType.includes("磐石獎"))
+        if (firstRockIndex >= 0 && firstRockIndex < 13) {
+          return 5 + firstRockIndex // 上半場基礎位置 + 獎項索引
+        }
+      } else if (type === "excellence") {
+        // 優質獎在下半場，從第21個投影片開始
+        return 21 // 下半場頒獎首頁後的第一個優質獎
+      }
+      return 0
+    }
+    
+    const slideIndex = getAwardTypeSlideIndex(awardType)
+    if (slideIndex >= 0 && slideIndex < totalSlides) {
       onGoToSlide(slideIndex)
     }
   }
-
-  // 計算合唱和舞蹈的實際位置（基於固定結構）
-  const getPerformanceSlides = () => {
-    // 合唱：投影片18（上半場頒獎首頁4 + 上半場13位獎項5-17 + 1 = 18）
-    const choirSlide = 18
-    // 舞蹈：投影片58（合唱18 + 用餐19 + 下半場首頁20 + 下半場37位獎項21-57 + 1 = 58）
-    const danceSlide = 58
-    return { choirSlide, danceSlide }
-  }
-
-  const { choirSlide, danceSlide } = getPerformanceSlides()
-  
-  // 完整段落配置（包含動態計算的位置）
-  const allSections = [
-    ...presentationSections.slice(0, 4), // 主頁到上半場頒獎
-    { name: "合唱", slideIndex: choirSlide, icon: Heart, color: "text-cyan-300 hover:bg-cyan-500/20", shortcut: "5" },
-    ...presentationSections.slice(4, 5), // 用餐
-    { name: "舞蹈", slideIndex: danceSlide, icon: Music, color: "text-red-300 hover:bg-red-500/20", shortcut: "7" },
-    ...presentationSections.slice(5) // 歡敬
-  ]
 
   return (
     <div
@@ -105,22 +102,22 @@ export function FullscreenNavigation({
           <Home className="w-4 h-4" />
         </Button>
 
-        {/* 段落快速跳轉按鈕 - 只在 hover 時顯示 */}
+        {/* 獎項快速跳轉按鈕 - 只在 hover 時顯示 */}
         <div
           className={`flex items-center gap-1 mx-2 transition-all duration-300 ${
-            isHovered ? "opacity-100 max-w-2xl" : "opacity-0 max-w-0 overflow-hidden"
+            isHovered ? "opacity-100 max-w-lg" : "opacity-0 max-w-0 overflow-hidden"
           }`}
         >
-          {allSections.map((section) => {
+          {awardSections.map((section) => {
             const IconComponent = section.icon
             return (
               <Button
-                key={section.shortcut}
-                onClick={() => handleSectionJump(section.slideIndex)}
+                key={section.awardType}
+                onClick={() => handleAwardJump(section.awardType)}
                 variant="ghost"
                 size="sm"
                 className={`${section.color} p-1.5 text-xs transition-all duration-200`}
-                title={`${section.shortcut}: ${section.name}`}
+                title={`跳轉到${section.name}`}
               >
                 <IconComponent className="w-3.5 h-3.5" />
               </Button>
@@ -133,9 +130,7 @@ export function FullscreenNavigation({
           {Array.from({ length: Math.min(totalSlides, 12) }, (_, i) => {
             const slideIndex = Math.floor((i * totalSlides) / Math.min(totalSlides, 12))
             const isActive = Math.abs(slideIndex - currentSlide) <= totalSlides / 24
-            const isSectionStart = allSections.some(section => 
-              Math.abs(section.slideIndex - slideIndex) <= 2
-            )
+            const isSectionStart = slideIndex % 10 === 0 || slideIndex === 4 || slideIndex === 21
 
             return (
               <button
@@ -177,7 +172,7 @@ export function FullscreenNavigation({
           isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
         }`}
       >
-← → 翻頁 • 1-7 段落跳轉 • F 全螢幕 • P 照片管理
+← → 翻頁 • 獎項跳轉 • F 全螢幕 • P 照片管理
       </div>
     </div>
   )

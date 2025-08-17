@@ -159,26 +159,14 @@ export function ChairmanAddressSlide({
                 </div>
               </div>
 
-              {/* 致詞內容區域 */}
+              {/* 簡潔的致詞指示 */}
               <div className="space-y-8 animate-slide-up" style={{ animationDelay: "2s" }}>
-                {/* 中文致詞 */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 shadow-sm">
-                  <p className="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium tracking-wide">
-                    {welcomeMessage.chinese}
+                <div className="text-center p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 shadow-sm">
+                  <p className="text-2xl md:text-3xl text-slate-700 font-bold mb-4">
+                    正在進行致詞
                   </p>
-                </div>
-
-                {/* 裝飾分隔符 */}
-                <div className="flex justify-center items-center gap-3">
-                  <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-slate-300" />
-                  <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full animate-pulse" />
-                  <div className="w-8 h-0.5 bg-gradient-to-r from-slate-300 to-transparent" />
-                </div>
-
-                {/* 英文致詞 */}
-                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-100 shadow-sm">
-                  <p className="text-lg md:text-xl text-slate-700 leading-relaxed italic font-medium tracking-wide">
-                    {welcomeMessage.english}
+                  <p className="text-lg md:text-xl text-slate-600 italic">
+                    Chairman's Address in Progress
                   </p>
                 </div>
               </div>

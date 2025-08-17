@@ -196,15 +196,6 @@ export function ThanksgivingMainSlide({
                   {subtitle}
                 </p>
 
-                {/* 活動時間 */}
-                <div
-                  className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full border border-amber-300 shadow-lg animate-slide-up"
-                  style={{ animationDelay: "1.4s" }}
-                >
-                  <span className="text-lg md:text-xl font-bold text-amber-800">
-                    {eventDate}
-                  </span>
-                </div>
               </div>
 
               {/* 裝飾線條 */}
