@@ -6,7 +6,6 @@ import Image from "next/image"
 interface PerformanceSlideProps {
   performanceType: 'violin' | 'choir' | 'dance'
   isActive?: boolean
-  duration?: number // 表演時長（分鐘），用於倒計時
   performers?: string[] // 表演者名單（可選）
 }
 
@@ -47,11 +46,9 @@ const performanceConfig = {
 export function PerformanceSlide({ 
   performanceType, 
   isActive = true,
-  duration,
   performers = []
 }: PerformanceSlideProps) {
   const [showContent, setShowContent] = useState(false)
-  const [countdown, setCountdown] = useState(duration ? duration * 60 : null)
   
   const config = performanceConfig[performanceType]
 
@@ -60,21 +57,6 @@ export function PerformanceSlide({
     return () => clearTimeout(timer)
   }, [])
 
-  // 倒計時功能
-  useEffect(() => {
-    if (countdown && countdown > 0 && isActive) {
-      const timer = setInterval(() => {
-        setCountdown(prev => prev ? prev - 1 : null)
-      }, 1000)
-      return () => clearInterval(timer)
-    }
-  }, [countdown, isActive])
-
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60)
-    const secs = seconds % 60
-    return `${mins}:${secs.toString().padStart(2, '0')}`
-  }
 
   // 音樂視覺化元素
   const MusicVisualization = () => (
@@ -214,25 +196,6 @@ export function PerformanceSlide({
         </div>
       </div>
 
-      {/* 倒計時器 */}
-      {countdown && countdown > 0 && (
-        <div className="absolute top-12 right-12 z-20 animate-slide-left" style={{ animationDelay: "1s" }}>
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500/30 to-orange-500/30 rounded-2xl blur-xl" />
-            <div className="relative px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
-              <div className="text-center">
-                <p className="text-sm text-white/80 mb-1">剩餘時間 / Time Left</p>
-                <p
-                  className="text-2xl font-mono font-bold text-white drop-shadow-lg animate-pulse"
-                  style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
-                >
-                  {formatTime(countdown)}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* 表演者名單 */}
       {performers.length > 0 && (

@@ -90,35 +90,6 @@ export function ChairmanAddressSlide({
         ))}
       </div>
 
-      {/* 企業標語 - 左上角 */}
-      <div className="absolute top-8 left-8 z-20 animate-slide-right" style={{ animationDelay: "1s" }}>
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-xl blur-lg" />
-          <div className="relative px-6 py-3 rounded-xl bg-slate-900/20 backdrop-blur-md border border-white/15 shadow-xl">
-            <p
-              className="text-lg font-bold tracking-wider text-white drop-shadow-lg"
-              style={{ textShadow: "0 2px 6px rgba(0,0,0,0.7)" }}
-            >
-              康橋國際學校
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* 企業理念 - 右下角 */}
-      <div className="absolute bottom-24 right-8 z-20 animate-slide-left" style={{ animationDelay: "1.2s" }}>
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-xl blur-lg" />
-          <div className="relative px-6 py-3 rounded-xl bg-slate-900/20 backdrop-blur-md border border-white/15 shadow-xl">
-            <p
-              className="text-base font-semibold italic text-white drop-shadow-lg tracking-wide"
-              style={{ textShadow: "0 2px 6px rgba(0,0,0,0.7)" }}
-            >
-              Excellence in Education, Excellence in Life
-            </p>
-          </div>
-        </div>
-      </div>
 
       {/* 聚光燈效果 */}
       <div className="absolute inset-0 pointer-events-none">
@@ -179,13 +150,6 @@ export function ChairmanAddressSlide({
               {/* 董事長信息區域 */}
               <div className="mb-10 animate-slide-up" style={{ animationDelay: "1.8s" }}>
                 <div className="relative">
-                  {/* 預留董事長照片位置 */}
-                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-slate-200 to-slate-300 rounded-full shadow-lg border-4 border-white flex items-center justify-center">
-                    <div className="text-slate-500 font-semibold text-sm text-center">
-                      董事長<br/>照片
-                    </div>
-                  </div>
-                  
                   <h2 className="text-2xl md:text-3xl font-bold text-slate-700 mb-2">{chairmanName}</h2>
                   <div className="flex justify-center items-center gap-3 text-lg">
                     <span className="text-slate-600 font-medium">{chairmanTitle.chinese}</span>
@@ -219,13 +183,6 @@ export function ChairmanAddressSlide({
                 </div>
               </div>
 
-              {/* 簽名區域 */}
-              <div className="mt-12 text-right animate-slide-up" style={{ animationDelay: "2.2s" }}>
-                <div className="inline-block px-8 py-4 bg-gradient-to-r from-slate-50 to-blue-50 rounded-xl border border-slate-200 shadow-sm">
-                  <p className="text-lg font-semibold text-slate-600 mb-1">感謝您的聆聽</p>
-                  <p className="text-base italic text-slate-500">Thank you for your attention</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

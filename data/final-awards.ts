@@ -52,6 +52,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 6,
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/2d7e0325-3ab9-4ffb-bd00-398dbe4cf118.jpg",
       department: "中學國際處",
       awardType: "10年資獎",
       recipientName: "林志龍",
