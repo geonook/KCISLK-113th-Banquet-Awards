@@ -266,7 +266,7 @@ export default function AwardPresentation() {
         return (
           <ThanksgivingMainSlide
             title={config.mainTitle || "113學年度感恩餐會"}
-            subtitle="113th Academic Year Thanksgiving Banquet"
+            subtitle={config.type === 'toast-main' ? "Celebration Toast" : config.type === 'celebration-main' ? "Celebration Time" : "113th Academic Year Thanksgiving Banquet"}
             eventDate="2024年12月"
           />
         )
@@ -317,16 +317,16 @@ export default function AwardPresentation() {
       case 'first-half-title':
         return (
           <PremiumTitleSlide 
-            title="優秀同仁頒獎 (1)" 
-            subtitle="Excellence in Education Awards - First Half" 
+            title="優秀同仁頒獎表揚" 
+            subtitle="Excellence in Education Awards" 
           />
         )
 
       case 'second-half-title':
         return (
           <PremiumTitleSlide 
-            title="優秀同仁頒獎 (2)" 
-            subtitle="Excellence in Education Awards - Second Half" 
+            title="優秀同仁頒獎表揚" 
+            subtitle="Excellence in Education Awards" 
           />
         )
 
