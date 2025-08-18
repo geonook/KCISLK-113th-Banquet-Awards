@@ -362,7 +362,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 41,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/61d38d8c-cd01-455e-972b-067585d0d2ad.jpg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/8ef8ba0c-3cfe-4c88-8efb-50471ae154f0.jpg",
       department: "中學教務處",
       awardType: "優質獎",
       recipientName: "李銘仁",
@@ -371,7 +371,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 42,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/899fde25-aafa-4250-b8b8-75ae9b25d735.jpg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/9715ec53-c1f8-4c90-b786-2c80ac0f1bd7.jpg",
       department: "中學教務處",
       awardType: "優質獎",
       recipientName: "葉子萃",
@@ -380,6 +380,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 43,
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/e16efa45-40f3-4d13-97b4-dd025ff3a871.jpg",
       department: "中學國際處",
       awardType: "優質獎",
       recipientName: "吳亭頡",
