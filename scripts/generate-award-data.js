@@ -166,8 +166,8 @@ async function processAndGenerateAwardData() {
 // 總得獎者: ${winners.length} 位
 
 export const finalAwardData: AwardData = {
-  title: "113學年度感恩餐會頒獎",
-  subtitle: "113th Academic Year Thanksgiving Banquet Awards",
+  title: "113學年度感恩迎新餐會",
+  subtitle: "113th Academic Year Appreciation & Welcome Banquet",
   winners: [
 ${winners
   .map(

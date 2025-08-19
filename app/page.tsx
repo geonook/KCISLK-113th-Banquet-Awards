@@ -254,8 +254,8 @@ export default function AwardPresentation() {
       case 'main':
         return (
           <ThanksgivingMainSlide
-            title="113學年度感恩餐會"
-            subtitle="113th Academic Year Thanksgiving Banquet"
+            title="113學年度感恩迎新餐會"
+            subtitle="113th Academic Year Appreciation & Welcome Banquet"
             eventDate="2024年12月"
           />
         )
@@ -265,8 +265,8 @@ export default function AwardPresentation() {
       case 'celebration-main':
         return (
           <ThanksgivingMainSlide
-            title={config.mainTitle || "113學年度感恩餐會"}
-            subtitle={config.type === 'toast-main' ? "Celebration Toast" : config.type === 'celebration-main' ? "Celebration Time" : "113th Academic Year Thanksgiving Banquet"}
+            title={config.mainTitle || "113學年度感恩迎新餐會"}
+            subtitle={config.type === 'toast-main' ? "Celebration Toast" : config.type === 'celebration-main' ? "Celebration Time" : "113th Academic Year Appreciation & Welcome Banquet"}
             eventDate="2024年12月"
           />
         )
@@ -303,8 +303,8 @@ export default function AwardPresentation() {
           <ChairmanAddressSlide
             isActive={true}
             welcomeMessage={{
-              chinese: "歡迎各位同仁參加113學年度感恩餐會，感謝大家一年來的辛勤付出與卓越表現。",
-              english: "Welcome to the 113th Academic Year Thanksgiving Banquet. Thank you for your dedication and outstanding performance this year."
+              chinese: "歡迎各位同仁參加113學年度感恩迎新餐會，感謝大家一年來的辛勤付出與卓越表現。",
+              english: "Welcome to the 113th Academic Year Appreciation & Welcome Banquet. Thank you for your dedication and outstanding performance this year."
             }}
             chairmanName="康橋董事長"
             chairmanTitle={{
@@ -318,7 +318,7 @@ export default function AwardPresentation() {
         return (
           <PremiumTitleSlide 
             title="優秀同仁頒獎表揚" 
-            subtitle="Excellence in Education Awards" 
+            subtitle="113th Academic Year Appreciation & Welcome Banquet" 
           />
         )
 
@@ -326,7 +326,7 @@ export default function AwardPresentation() {
         return (
           <PremiumTitleSlide 
             title="優秀同仁頒獎表揚" 
-            subtitle="Excellence in Education Awards" 
+            subtitle="113th Academic Year Appreciation & Welcome Banquet" 
           />
         )
 

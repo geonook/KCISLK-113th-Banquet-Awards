@@ -1,8 +1,8 @@
 import type { AwardData } from "../types/award"
 
 export const awardData: AwardData = {
-  title: "年度優秀員工頒獎典禮",
-  subtitle: "Excellence in Education Awards",
+  title: "113學年度感恩迎新餐會",
+  subtitle: "113th Academic Year Appreciation & Welcome Banquet",
   winners: [
     {
       id: 1,

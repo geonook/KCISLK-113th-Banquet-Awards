@@ -2,8 +2,8 @@ import type { AwardData } from "../types/award"
 
 // 根據CSV檔案的完整獎項資料（按頁數排序）
 export const csvAwardData: AwardData = {
-  title: "113學年度感恩餐會頒獎",
-  subtitle: "113th Academic Year Thanksgiving Banquet Awards",
+  title: "113學年度感恩迎新餐會",
+  subtitle: "113th Academic Year Appreciation & Welcome Banquet",
   winners: [
     {
       id: 2,
