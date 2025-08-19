@@ -150,7 +150,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
               </div>
 
               {/* 磐石獎佈局 - 增加間距25% */}
-              <div className="grid md:grid-cols-5 gap-10 items-center">
+              <div className="grid md:grid-cols-6 gap-10 items-center">
                 {/* 照片區域 - 更大 */}
                 <div
                   className="md:col-span-2 flex justify-center animate-slide-right"
@@ -206,7 +206,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
                 </div>
 
                 {/* 磐石獎資訊 - 佔更多空間 */}
-                <div className="md:col-span-3 text-center md:text-left space-y-6">
+                <div className="md:col-span-4 text-center md:text-left space-y-6">
                   {/* 部門標籤 */}
                   <div
                     className="flex justify-center md:justify-start animate-slide-left"
