@@ -70,7 +70,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
             <div className="absolute inset-0 rounded-3xl blur-3xl scale-105 bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-indigo-400/20" />
 
             {/* 主卡片 */}
-            <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden p-8">
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden p-8">
               {/* 頂部裝飾條 - 紫藍色漸層 */}
               <div
                 className="absolute top-0 left-0 h-3 w-full animate-expand bg-gradient-to-r from-purple-500 via-blue-500 via-indigo-500 to-purple-500"
@@ -108,13 +108,13 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
                     <div className="absolute -inset-4 rounded-full opacity-30 animate-spin-reverse bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300" />
 
                     {/* 照片框架 - 更大尺寸 */}
-                    <div className="w-56 h-56 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-purple-300 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-purple-300 group-hover:scale-105 transition-transform duration-300"
                       {winner.photoUrl ? (
                         <Image
                           src={winner.photoUrl || "/placeholder.svg"}
                           alt={`${winner.recipientName} photo`}
-                          width={224}
-                          height={224}
+                          width={256}
+                          height={256}
                           className="object-cover w-full h-full"
                         />
                       ) : (
@@ -169,7 +169,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
 
                   {/* 磐石獎類型 - 更大字體 */}
                   <h2
-                    className="text-5xl md:text-6xl font-black mb-4 animate-slide-left text-purple-600"
+                    className="text-6xl md:text-7xl font-black mb-4 animate-slide-left text-purple-600"
                     style={{
                       textShadow: "0 2px 4px rgba(0,0,0,0.1)",
                       animationDelay: "0.6s",
@@ -180,7 +180,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
 
                   {/* 得獎者姓名 - 超大字體 */}
                   <h3
-                    className="text-6xl md:text-7xl font-black text-gray-800 leading-tight animate-slide-left"
+                    className="text-7xl md:text-8xl font-black text-gray-800 leading-tight animate-slide-left"
                     style={{
                       background: "linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%)",
                       WebkitBackgroundClip: "text",

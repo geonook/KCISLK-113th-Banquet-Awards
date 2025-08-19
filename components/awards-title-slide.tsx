@@ -188,7 +188,7 @@ export function AwardsTitleSlide({ phase, isActive = true, awardCounts }: Awards
             <div className={`absolute inset-0 bg-gradient-to-r ${config.gradientColors} opacity-20 rounded-3xl blur-3xl scale-110`} />
 
             {/* 主卡片 */}
-            <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-14 shadow-2xl border border-white/30 overflow-hidden">
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-14 shadow-2xl border border-white/30 overflow-hidden">
               {/* 裝飾性漸層頂條 */}
               <div className={`absolute top-0 left-0 w-full h-3 bg-gradient-to-r ${config.gradientColors}`} />
 

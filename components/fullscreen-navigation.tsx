@@ -76,8 +76,8 @@ export function FullscreenNavigation({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-3 shadow-lg border border-white/20 transition-all duration-200 ${
-          isHovered ? "scale-105 backdrop-blur-xl bg-white/15" : "scale-100"
+        className={`flex items-center bg-white/5 backdrop-blur-sm rounded-full transition-all duration-300 ${
+          isHovered ? "scale-105 backdrop-blur-xl bg-white/15 px-4 py-3 shadow-lg border border-white/20" : "scale-90 px-3 py-2 shadow-sm border border-white/10"
         }`}
       >
         {/* 上一頁按鈕 */}

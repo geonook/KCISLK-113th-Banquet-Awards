@@ -106,7 +106,7 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 via-orange-400/20 to-red-400/20 rounded-3xl blur-3xl scale-110" />
 
             {/* 主卡片 */}
-            <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-14 shadow-2xl border border-white/30 overflow-hidden">
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-14 shadow-2xl border border-white/30 overflow-hidden">
               {/* 裝飾性幾何元素 */}
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 via-orange-500 via-red-500 to-purple-500" />
 
@@ -118,7 +118,7 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
               <div className="mb-10 animate-slide-up" style={{ animationDelay: "1s" }}>
                 {/* 主標題 */}
                 <h1
-                  className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 leading-none whitespace-nowrap"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-none whitespace-nowrap"
                   style={{
                     background:
                       "linear-gradient(135deg, #f59e0b 0%, #ea580c 25%, #dc2626 50%, #7c3aed 75%, #2563eb 100%)",
@@ -132,7 +132,7 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
                 </h1>
 
                 <p
-                  className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-semibold tracking-wide animate-slide-up"
+                  className="text-2xl md:text-3xl lg:text-4xl text-gray-700 font-semibold tracking-wide animate-slide-up"
                   style={{ animationDelay: "1.2s" }}
                 >
                   {subtitle}

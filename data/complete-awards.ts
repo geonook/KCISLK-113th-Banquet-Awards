@@ -2,8 +2,8 @@ import type { AwardData } from "../types/award"
 
 // 更新標題
 export const completeAwardData: AwardData = {
-  title: "113學年度感恩迎新餐會",
-  subtitle: "113th Academic Year Appreciation & Welcome Banquet",
+  title: "2025感恩迎新餐會",
+  subtitle: "2025 Appreciation & Welcome Banquet",
   winners: [
     {
       id: 1,

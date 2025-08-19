@@ -254,8 +254,8 @@ export default function AwardPresentation() {
       case 'main':
         return (
           <ThanksgivingMainSlide
-            title="113學年度感恩迎新餐會"
-            subtitle="113th Academic Year Appreciation & Welcome Banquet"
+            title="2025感恩迎新餐會"
+            subtitle="2025 Appreciation & Welcome Banquet"
             eventDate="2024年12月"
           />
         )
@@ -265,8 +265,8 @@ export default function AwardPresentation() {
       case 'celebration-main':
         return (
           <ThanksgivingMainSlide
-            title={config.mainTitle || "113學年度感恩迎新餐會"}
-            subtitle={config.type === 'toast-main' ? "Celebration Toast" : config.type === 'celebration-main' ? "Celebration Time" : "113th Academic Year Appreciation & Welcome Banquet"}
+            title={config.mainTitle || "2025感恩迎新餐會"}
+            subtitle={config.type === 'toast-main' ? "Celebration Toast" : config.type === 'celebration-main' ? "Celebration Time" : "2025 Appreciation & Welcome Banquet"}
             eventDate="2024年12月"
           />
         )
@@ -303,8 +303,8 @@ export default function AwardPresentation() {
           <ChairmanAddressSlide
             isActive={true}
             welcomeMessage={{
-              chinese: "歡迎各位同仁參加113學年度感恩迎新餐會，感謝大家一年來的辛勤付出與卓越表現。",
-              english: "Welcome to the 113th Academic Year Appreciation & Welcome Banquet. Thank you for your dedication and outstanding performance this year."
+              chinese: "歡迎各位同仁參加2025感恩迎新餐會，感謝大家一年來的辛勤付出與卓越表現。",
+              english: "Welcome to the 2025 Appreciation & Welcome Banquet. Thank you for your dedication and outstanding performance this year."
             }}
             chairmanName="康橋董事長"
             chairmanTitle={{
@@ -318,7 +318,7 @@ export default function AwardPresentation() {
         return (
           <PremiumTitleSlide 
             title="優秀同仁頒獎表揚" 
-            subtitle="113th Academic Year Appreciation & Welcome Banquet" 
+            subtitle="2025 Appreciation & Welcome Banquet" 
           />
         )
 
@@ -326,7 +326,7 @@ export default function AwardPresentation() {
         return (
           <PremiumTitleSlide 
             title="優秀同仁頒獎表揚" 
-            subtitle="113th Academic Year Appreciation & Welcome Banquet" 
+            subtitle="2025 Appreciation & Welcome Banquet" 
           />
         )
 
@@ -395,7 +395,7 @@ export default function AwardPresentation() {
             winners={awardData.winners}
             onPhotoUpdate={handlePhotoUpdate}
             triggerButton={
-              <button className="w-8 h-8 bg-gray-800/30 hover:bg-gray-700/60 text-gray-500 hover:text-white rounded-full flex items-center justify-center transition-all duration-200 opacity-20 hover:opacity-100 backdrop-blur-sm">
+              <button className="w-6 h-6 bg-gray-800/20 hover:bg-gray-700/60 text-gray-500 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 opacity-10 hover:opacity-100 hover:w-8 hover:h-8 backdrop-blur-sm">
                 <Settings className="w-4 h-4" />
               </button>
             }

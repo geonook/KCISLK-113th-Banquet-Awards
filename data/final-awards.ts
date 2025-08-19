@@ -1,13 +1,13 @@
 import type { AwardData } from "../types/award"
 
 // 根據正確順序排列的完整獎項資料
-// 資料來源: 113學年度感恩迎新餐會頒獎順序
+// 資料來源: 2025感恩迎新餐會頒獎順序
 // 更新時間: 2024年12月
 // 總得獎者: 50 位
 
 export const finalAwardData: AwardData = {
-  title: "113學年度感恩迎新餐會",
-  subtitle: "113th Academic Year Appreciation & Welcome Banquet",
+  title: "2025感恩迎新餐會",
+  subtitle: "2025 Appreciation & Welcome Banquet",
   winners: [
     // 按照提供的順序排列
     {

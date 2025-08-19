@@ -79,7 +79,7 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
             <div className="absolute inset-0 rounded-3xl blur-3xl scale-105 bg-gradient-to-r from-yellow-400/20 via-amber-400/20 to-orange-400/20" />
 
             {/* 主卡片 */}
-            <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden p-12">
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden p-12">
               {/* 頂部裝飾條 - 金色漸層 */}
               <div
                 className="absolute top-0 left-0 h-3 w-full animate-expand bg-gradient-to-r from-yellow-400 via-amber-500 via-orange-500 to-yellow-400"
@@ -117,13 +117,13 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
                     <div className="absolute -inset-4 rounded-full opacity-30 animate-spin-reverse bg-gradient-to-r from-amber-300 via-yellow-300 to-orange-300" />
 
                     {/* 照片框架 - 更大尺寸 */}
-                    <div className="w-56 h-56 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-yellow-300 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-yellow-300 group-hover:scale-105 transition-transform duration-300"
                       {winner.photoUrl ? (
                         <Image
                           src={winner.photoUrl || "/placeholder.svg"}
                           alt={`${winner.recipientName} photo`}
-                          width={224}
-                          height={224}
+                          width={320}
+                          height={320}
                           className="object-cover w-full h-full"
                         />
                       ) : (
@@ -178,7 +178,7 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
 
                   {/* 年資獎類型 - 更大字體 */}
                   <h2
-                    className="text-5xl md:text-6xl font-black mb-4 animate-slide-left text-amber-600"
+                    className="text-6xl md:text-7xl font-black mb-4 animate-slide-left text-amber-600"
                     style={{
                       textShadow: "0 2px 4px rgba(0,0,0,0.1)",
                       animationDelay: "0.6s",
@@ -189,7 +189,7 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
 
                   {/* 得獎者姓名 - 超大字體 */}
                   <h3
-                    className="text-6xl md:text-7xl font-black text-gray-800 leading-tight animate-slide-left"
+                    className="text-7xl md:text-8xl font-black text-gray-800 leading-tight animate-slide-left"
                     style={{
                       background: "linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%)",
                       WebkitBackgroundClip: "text",

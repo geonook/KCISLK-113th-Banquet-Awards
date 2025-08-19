@@ -2,8 +2,8 @@ import type { AwardData } from "../types/award"
 
 // 按頁數排序的完整獎項資料
 export const sortedAwardData: AwardData = {
-  title: "113學年度感恩迎新餐會",
-  subtitle: "113th Academic Year Appreciation & Welcome Banquet",
+  title: "2025感恩迎新餐會",
+  subtitle: "2025 Appreciation & Welcome Banquet",
   winners: [
     {
       id: 1,

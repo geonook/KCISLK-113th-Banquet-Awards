@@ -10,7 +10,7 @@
 - **Exact Design Replication**: Complete visual consistency with `premium-title-slide.tsx`
 - **Bilingual Support**: Chinese titles with English subtitles for all variants
 - **4 Variant Types**:
-  - `thanksgiving`: 113學年度感恩迎新餐會 / 113th Academic Year Appreciation & Welcome Banquet
+  - `thanksgiving`: 2025感恩迎新餐會 / 2025 Appreciation & Welcome Banquet
   - `toast`: 全體敬酒 / Group Toast Ceremony
   - `dining`: 用餐時間 / Dining Time
   - `social`: 歡敬時間 / Social Hour

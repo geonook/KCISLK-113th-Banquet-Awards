@@ -19,8 +19,8 @@ interface VariantContent {
 
 const variantContentMap: Record<MainPageSlideProps['variant'], VariantContent> = {
   thanksgiving: {
-    chineseTitle: "113學年度感恩迎新餐會",
-    englishSubtitle: "113th Academic Year Appreciation & Welcome Banquet",
+    chineseTitle: "2025感恩迎新餐會",
+    englishSubtitle: "2025 Appreciation & Welcome Banquet",
     coreTheme: "感恩與團結",
     englishTheme: "Gratitude & Unity",
     leftSlogan: "心懷感恩 凝聚力量",
@@ -152,7 +152,7 @@ export function MainPageSlide({ variant, isActive = true }: MainPageSlideProps) 
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 via-orange-400/20 to-red-400/20 rounded-3xl blur-3xl scale-110" />
 
             {/* 主卡片 */}
-            <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-14 shadow-2xl border border-white/30 overflow-hidden">
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-14 shadow-2xl border border-white/30 overflow-hidden">
               {/* 裝飾性幾何元素 */}
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 via-orange-500 via-red-500 to-purple-500" />
 
