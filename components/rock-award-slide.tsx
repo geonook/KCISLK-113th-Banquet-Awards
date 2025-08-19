@@ -239,7 +239,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
                     style={{
                       textShadow: "4px 4px 8px rgba(0,0,0,0.6), 0 0 30px rgba(255,255,255,0.2)",
                       animationDelay: "0.7s",
-                      whiteSpace: "pre-line", // 支持\n換行
+                      whiteSpace: "nowrap", // 防止姓名分行
                     }}
                   >
                     {formatLongName(winner.recipientName)}
