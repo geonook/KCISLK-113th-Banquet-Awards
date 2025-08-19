@@ -120,13 +120,9 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
                 <h1
                   className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-8 leading-none whitespace-nowrap"
                   style={{
-                    background:
-                      "linear-gradient(135deg, #f59e0b 0%, #ea580c 25%, #dc2626 50%, #7c3aed 75%, #2563eb 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.2))",
-                    textShadow: "4px 4px 12px rgba(0,0,0,0.4), 0 0 50px rgba(245, 158, 11, 0.5)",
+                    color: "white",
+                    textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
+                    filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.4))",
                   }}
                 >
                   {title}
