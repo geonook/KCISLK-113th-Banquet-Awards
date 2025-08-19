@@ -23,6 +23,8 @@ type SlideType =
   | 'toast-main'
   | 'first-half-title'
   | 'first-half-award'
+  | '15-year-service-title'
+  | '10-year-service-title'
   | 'choir-performance'
   | 'dining-main'
   | 'second-half-title'
@@ -75,6 +77,16 @@ export default function AwardPresentation() {
     // 6-18. 上半場獎項 (年資獎 + 磐石獎)
     firstHalf.forEach((_, index) => {
       configs.push({ type: 'first-half-award', winnerIndex: index })
+      
+      // 在葉郁庭(15年資獎最後一位, index: 3)之後插入15年年資獎標題頁
+      if (index === 3) { // 葉郁庭是id:4, 在firstHalf中的index是3
+        configs.push({ type: '15-year-service-title' })
+      }
+      
+      // 在Mitchell David James(10年資獎最後一位, index: 6)之後插入10年年資獎標題頁
+      if (index === 6) { // Mitchell David James是id:7, 在firstHalf中的index是6
+        configs.push({ type: '10-year-service-title' })
+      }
     })
     
     configs.push(
@@ -335,6 +347,22 @@ export default function AwardPresentation() {
           <PremiumTitleSlide 
             title="優秀同仁頒獎表揚" 
             subtitle="Excellence Awards & Staff Recognition" 
+          />
+        )
+
+      case '15-year-service-title':
+        return (
+          <PremiumTitleSlide 
+            title="15年年資獎" 
+            subtitle="15 Years of Service Award" 
+          />
+        )
+
+      case '10-year-service-title':
+        return (
+          <PremiumTitleSlide 
+            title="10年年資獎" 
+            subtitle="10 Years of Service Award" 
           />
         )
 
