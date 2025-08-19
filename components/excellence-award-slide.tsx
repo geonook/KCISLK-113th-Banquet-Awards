@@ -108,7 +108,7 @@ export function ExcellenceAwardSlide({ winner, isActive }: ExcellenceAwardSlideP
                     <div className="absolute -inset-4 rounded-full opacity-30 animate-spin-reverse bg-gradient-to-r from-red-300 via-orange-300 to-pink-300" />
 
                     {/* 照片框架 - 更大尺寸 */}
-                    <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-orange-300 group-hover:scale-105 transition-transform duration-300"
+                    <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-orange-300 group-hover:scale-105 transition-transform duration-300">
                       {winner.photoUrl ? (
                         <Image
                           src={winner.photoUrl || "/placeholder.svg"}
