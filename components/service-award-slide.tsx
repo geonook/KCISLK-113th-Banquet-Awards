@@ -12,13 +12,39 @@ interface ServiceAwardSlideProps {
 export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) {
   const [showContent, setShowContent] = useState(false)
   
-  // 智能字體大小系統 - 根據姓名長度自動調整
+  // 獎項類型智能字體系統 - 根據獎項名稱長度自動調整
+  const getAwardTypeFontSize = (awardType: string): string => {
+    const length = awardType.length
+    if (length <= 8) return "text-7xl md:text-8xl"      // 短獎項：最大字體（如"25年資獎"）
+    if (length <= 15) return "text-6xl md:text-7xl"     // 中等獎項：大字體（如"磐石獎"、"優質獎"）
+    if (length <= 22) return "text-5xl md:text-6xl"     // 較長獎項：中字體（如"Outstanding Performance"）
+    return "text-4xl md:text-5xl"                       // 超長獎項：適中字體（如"10 Years of Service Award"）
+  }
+  
+  // 姓名智能字體系統 - 優化版（整體提升一級讓姓名更突出）
   const getNameFontSize = (name: string): string => {
     const length = name.length
-    if (length <= 6) return "text-8xl md:text-9xl"      // 短名字(中文)：最大字體
-    if (length <= 12) return "text-7xl md:text-8xl"     // 中等名字：大字體  
-    if (length <= 18) return "text-6xl md:text-7xl"     // 較長名字：中字體
-    return "text-5xl md:text-6xl"                       // 超長名字：基礎大字體
+    if (length <= 6) return "text-9xl md:text-10xl"     // 中文姓名：超大字體（比現在更大）
+    if (length <= 12) return "text-8xl md:text-9xl"     // 中等名字：大字體（提升一級）
+    if (length <= 18) return "text-7xl md:text-8xl"     // 較長名字：中大字體（提升一級）
+    return "text-6xl md:text-7xl"                       // 超長名字：適中字體（比現在大一級）
+  }
+  
+  // 處理極長獎項名稱的換行顯示
+  const formatLongAwardType = (awardType: string): string => {
+    if (awardType.length <= 22) return awardType
+    
+    // 英文獎項名稱：按空格分割，兩行顯示
+    if (/^[A-Za-z\s]+$/.test(awardType)) {
+      const words = awardType.split(' ')
+      if (words.length >= 4) {
+        // "10 Years of Service Award" → "10 Years of\nService Award"
+        const midPoint = Math.ceil(words.length / 2)
+        return `${words.slice(0, midPoint).join(' ')}\n${words.slice(midPoint).join(' ')}`
+      }
+    }
+    
+    return awardType
   }
   
   // 處理極長姓名的換行顯示
@@ -205,15 +231,16 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
                     </div>
                   </div>
 
-                  {/* 年資獎類型 - 更大字體+25%+立體效果 */}
+                  {/* 年資獎類型 - 智能字體大小+立體效果 */}
                   <h2
-                    className="text-7xl md:text-8xl font-black mb-4 animate-slide-left text-amber-400"
+                    className={`${getAwardTypeFontSize(winner.awardType)} font-black mb-4 animate-slide-left text-amber-400`}
                     style={{
                       textShadow: "3px 3px 6px rgba(0,0,0,0.5), 0 0 20px rgba(245, 158, 11, 0.3)",
                       animationDelay: "0.6s",
+                      whiteSpace: "pre-line", // 支持\n換行
                     }}
                   >
-                    {winner.awardType}
+                    {formatLongAwardType(winner.awardType)}
                   </h2>
 
                   {/* 得獎者姓名 - 智能字體大小+白色立體效果 */}
