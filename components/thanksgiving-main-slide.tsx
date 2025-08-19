@@ -178,12 +178,9 @@ We started with rock - seven years on - we shine like gold
                 <h1
                   className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-none"
                   style={{
-                    background:
-                      "linear-gradient(135deg, #f59e0b 0%, #ea580c 25%, #dc2626 50%, #7c3aed 75%, #2563eb 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))",
+                    color: "white",
+                    textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
+                    filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.4))",
                   }}
                 >
                   {title}

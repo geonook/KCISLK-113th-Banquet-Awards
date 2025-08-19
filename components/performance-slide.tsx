@@ -219,20 +219,16 @@ export function PerformanceSlide({
               <div className={`absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-br ${config.gradientColors} rounded-full opacity-20 animate-spin-slow`} />
               <div className={`absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br ${config.gradientColors} rounded-full opacity-20 animate-spin-reverse`} />
 
-              {/* 表演icon大圖示 */}
-              <div className="mb-8 animate-bounce-in" style={{ animationDelay: "1s" }}>
-                <div className="text-8xl mb-4 animate-heartbeat">
-                  {config.icon}
-                </div>
-              </div>
 
               {/* 標題區域 */}
               <div className="mb-10 animate-slide-up" style={{ animationDelay: "1.2s" }}>
                 {/* 中文主標題 */}
                 <h1
-                  className={`text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r ${config.gradientColors}`}
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-tight"
                   style={{
-                    filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))",
+                    color: "white",
+                    textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
+                    filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.4))",
                   }}
                 >
                   {config.title}
