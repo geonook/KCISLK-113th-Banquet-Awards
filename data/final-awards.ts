@@ -246,6 +246,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 28,
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/fdd66d8c-86b6-4a99-934c-92dc0e78dd6c.jpg",
       department: "小學國際處",
       awardType: "優質獎",
       recipientName: "姜孟妤 Meg Chiang",
@@ -434,6 +435,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 49,
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/48e26e91-e1d7-4d98-9629-2a7ae5c252a2.jpg",
       department: "幼兒園",
       awardType: "優質獎",
       recipientName: "Hedges Justin Holmes",
