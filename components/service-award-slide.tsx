@@ -11,6 +11,35 @@ interface ServiceAwardSlideProps {
 
 export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) {
   const [showContent, setShowContent] = useState(false)
+  
+  // 智能字體大小系統 - 根據姓名長度自動調整
+  const getNameFontSize = (name: string): string => {
+    const length = name.length
+    if (length <= 6) return "text-8xl md:text-9xl"      // 短名字(中文)：最大字體
+    if (length <= 12) return "text-7xl md:text-8xl"     // 中等名字：大字體  
+    if (length <= 18) return "text-6xl md:text-7xl"     // 較長名字：中字體
+    return "text-5xl md:text-6xl"                       // 超長名字：基礎大字體
+  }
+  
+  // 處理極長姓名的換行顯示
+  const formatLongName = (name: string): string => {
+    if (name.length <= 18) return name
+    
+    // 英文姓名：按空格分割，兩行顯示
+    if (/^[A-Za-z\s]+$/.test(name)) {
+      const words = name.split(' ')
+      if (words.length >= 3) {
+        return `${words[0]} ${words[1]}\n${words.slice(2).join(' ')}`
+      }
+    }
+    
+    return name
+  }
+  
+  // 智能行高調整
+  const getNameLineHeight = (name: string): string => {
+    return name.length > 15 ? "leading-tight" : "leading-tight"
+  }
 
   // 判斷是否為年資獎
   const isServiceAward = winner.awardType.includes("年資獎") || winner.awardType.includes("Years of Service")
@@ -187,15 +216,16 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
                     {winner.awardType}
                   </h2>
 
-                  {/* 得獎者姓名 - 超大字體+25%+白色立體效果 */}
+                  {/* 得獎者姓名 - 智能字體大小+白色立體效果 */}
                   <h3
-                    className="text-8xl md:text-9xl font-black text-white leading-tight animate-slide-left"
+                    className={`${getNameFontSize(winner.recipientName)} font-black text-white ${getNameLineHeight(winner.recipientName)} animate-slide-left`}
                     style={{
                       textShadow: "4px 4px 8px rgba(0,0,0,0.6), 0 0 30px rgba(255,255,255,0.2)",
                       animationDelay: "0.7s",
+                      whiteSpace: "pre-line", // 支持\n換行
                     }}
                   >
-                    {winner.recipientName}
+                    {formatLongName(winner.recipientName)}
                   </h3>
 
                   {/* 年資獎專用感謝詞 */}
