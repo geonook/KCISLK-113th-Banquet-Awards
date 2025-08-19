@@ -82,7 +82,7 @@ export const finalAwardData: AwardData = {
       awardType: "磐石獎",
       recipientName: "Harold Keys",
       achievements:
-        "Mr. Harold Keys has played a key role in leading KCFS into a new chapter, providing steady guidance and support to both new and returning teachers. His clear communication and deep understanding of the KCFS program have helped build trust with parents and strengthen our school community.\n\nHarold has consistently shown dedication to the success of others. His contribution to English Open Day—especially through his work on the promotional video—was instrumental in making the event a memorable success.",
+        "Mr. Harold Keys has played a key role in leading KCFS into a new chapter, providing steady guidance and support to both new and returning teachers. His clear communication and deep understanding of the KCFS program have helped build trust with parents and strengthen our school community.\nHarold has consistently shown dedication to the success of others. His contribution to English Open Day—especially through his work on the promotional video—was instrumental in making the event a memorable success.",
     },
     {
       id: 10,
