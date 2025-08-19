@@ -78,8 +78,8 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
             {/* 背景光暈 - 金色主題 */}
             <div className="absolute inset-0 rounded-3xl blur-3xl scale-105 bg-gradient-to-r from-yellow-400/20 via-amber-400/20 to-orange-400/20" />
 
-            {/* 主卡片 */}
-            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden p-12">
+            {/* 主卡片 - 增加padding 25% */}
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden p-16">
               {/* 頂部裝飾條 - 金色漸層 */}
               <div
                 className="absolute top-0 left-0 h-3 w-full animate-expand bg-gradient-to-r from-yellow-400 via-amber-500 via-orange-500 to-yellow-400"
@@ -104,8 +104,8 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
                 </div>
               </div>
 
-              {/* 年資獎專用佈局 - 更大的空間給照片和姓名 */}
-              <div className="grid md:grid-cols-5 gap-8 items-center">
+              {/* 年資獎專用佈局 - 更大的空間給照片和姓名 +25% */}
+              <div className="grid md:grid-cols-5 gap-10 items-center">
                 {/* 照片區域 - 更大 */}
                 <div
                   className="md:col-span-2 flex justify-center animate-slide-right"
@@ -116,14 +116,14 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
                     <div className="absolute -inset-6 rounded-full opacity-40 animate-spin-slow bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-400" />
                     <div className="absolute -inset-4 rounded-full opacity-30 animate-spin-reverse bg-gradient-to-r from-amber-300 via-yellow-300 to-orange-300" />
 
-                    {/* 照片框架 - 更大尺寸 */}
-                    <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-yellow-300 group-hover:scale-105 transition-transform duration-300">
+                    {/* 照片框架 - 更大尺寸 +25% */}
+                    <div className="w-96 h-96 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-yellow-300 group-hover:scale-105 transition-transform duration-300">
                       {winner.photoUrl ? (
                         <Image
                           src={winner.photoUrl || "/placeholder.svg"}
                           alt={`${winner.recipientName} photo`}
-                          width={320}
-                          height={320}
+                          width={384}
+                          height={384}
                           className="object-cover w-full h-full"
                         />
                       ) : (
@@ -168,34 +168,30 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
                     style={{ animationDelay: "0.5s" }}
                   >
                     <div
-                      className="inline-flex items-center px-8 py-4 rounded-full font-bold text-white shadow-xl border-2 border-white/20 text-xl bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500"
+                      className="inline-flex items-center px-10 py-5 rounded-full font-bold text-white shadow-xl border-2 border-white/20 text-2xl bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500"
                       style={{ textShadow: "0 1px 2px rgba(0,0,0,0.3)" }}
                     >
-                      <div className="mr-4 animate-spin-slow text-2xl">🏢</div>
+                      <div className="mr-5 animate-spin-slow text-3xl">🏢</div>
                       {winner.department}
                     </div>
                   </div>
 
-                  {/* 年資獎類型 - 更大字體 */}
+                  {/* 年資獎類型 - 更大字體+25%+立體效果 */}
                   <h2
-                    className="text-6xl md:text-7xl font-black mb-4 animate-slide-left text-amber-600"
+                    className="text-7xl md:text-8xl font-black mb-4 animate-slide-left text-amber-400"
                     style={{
-                      textShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                      textShadow: "3px 3px 6px rgba(0,0,0,0.5), 0 0 20px rgba(245, 158, 11, 0.3)",
                       animationDelay: "0.6s",
                     }}
                   >
                     {winner.awardType}
                   </h2>
 
-                  {/* 得獎者姓名 - 超大字體 */}
+                  {/* 得獎者姓名 - 超大字體+25%+白色立體效果 */}
                   <h3
-                    className="text-7xl md:text-8xl font-black text-gray-800 leading-tight animate-slide-left"
+                    className="text-8xl md:text-9xl font-black text-white leading-tight animate-slide-left"
                     style={{
-                      background: "linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                      textShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      textShadow: "4px 4px 8px rgba(0,0,0,0.6), 0 0 30px rgba(255,255,255,0.2)",
                       animationDelay: "0.7s",
                     }}
                   >
@@ -204,13 +200,13 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
 
                   {/* 年資獎專用感謝詞 */}
                   <div className="mt-8 animate-slide-up" style={{ animationDelay: "0.8s" }}>
-                    <div className="bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 rounded-2xl p-8 border-l-6 border-yellow-500 shadow-inner relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 bg-white/40 rounded-2xl p-10 border-l-6 border-yellow-500 shadow-inner relative overflow-hidden">
                       {/* 背景裝飾 */}
                       <div className="absolute top-0 right-0 text-8xl opacity-10 text-yellow-300">🏅</div>
 
                       {/* 感謝內容 */}
                       <div className="relative z-10 text-center">
-                        <h4 className="text-3xl font-black text-gray-800 mb-6 flex items-center justify-center gap-4">
+                        <h4 className="text-4xl font-black text-gray-800 mb-8 flex items-center justify-center gap-5">
                           <span className="animate-bounce">🙏</span>
                           感謝您的長期奉獻
                           <span className="animate-bounce" style={{ animationDelay: "0.5s" }}>
@@ -218,13 +214,13 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
                           </span>
                         </h4>
 
-                        <div className="text-xl text-gray-700 leading-relaxed space-y-4">
+                        <div className="text-2xl text-gray-800 leading-relaxed space-y-5" style={{textShadow: "1px 1px 3px rgba(255,255,255,0.8)"}}>
                           <p className="font-semibold">
-                            感謝您 <span className="text-amber-600 font-black text-2xl">{getServiceYears()}</span>{" "}
+                            感謝您 <span className="text-amber-600 font-black text-3xl">{getServiceYears()}</span>{" "}
                             年來的辛勤付出
                           </p>
                           <p>您的專業與熱忱，是學校發展的重要基石</p>
-                          <p className="text-lg text-amber-700 font-bold">🌟 致敬您的教育初心與堅持 🌟</p>
+                          <p className="text-xl text-amber-700 font-bold">🌟 致敬您的教育初心與堅持 🌟</p>
                         </div>
                       </div>
                     </div>

@@ -395,8 +395,8 @@ export default function AwardPresentation() {
             winners={awardData.winners}
             onPhotoUpdate={handlePhotoUpdate}
             triggerButton={
-              <button className="w-6 h-6 bg-gray-800/20 hover:bg-gray-700/60 text-gray-500 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 opacity-10 hover:opacity-100 hover:w-8 hover:h-8 backdrop-blur-sm">
-                <Settings className="w-4 h-4" />
+              <button className="w-8 h-8 bg-gray-800/20 hover:bg-gray-700/60 text-gray-500 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 opacity-10 hover:opacity-100 hover:w-10 hover:h-10 backdrop-blur-sm">
+                <Settings className="w-5 h-5" />
               </button>
             }
           />

@@ -288,15 +288,15 @@ export function PerformanceSlide({
                   </div>
                 </div>
 
-                {/* 觀賞提示 */}
+                {/* 觀賞提示 - 放大25% */}
                 <div
-                  className="mt-8 p-6 bg-gradient-to-r from-white/80 to-gray-50/80 rounded-2xl border border-gray-200 shadow-inner animate-slide-up"
+                  className="mt-10 p-8 bg-gradient-to-r from-white/80 to-gray-50/80 bg-white/40 rounded-2xl border border-gray-200 shadow-inner animate-slide-up"
                   style={{ animationDelay: "2.8s" }}
                 >
-                  <p className="text-lg font-medium text-gray-600 mb-2">
+                  <p className="text-xl font-medium text-gray-800 mb-3" style={{textShadow: "1px 1px 2px rgba(255,255,255,0.8)"}}>
                     🎬 請欣賞精彩表演 / Please Enjoy the Performance
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-lg text-gray-700" style={{textShadow: "1px 1px 2px rgba(255,255,255,0.8)"}}>
                     讓我們一起感受藝術的魅力 / Let's feel the charm of art together
                   </p>
                 </div>

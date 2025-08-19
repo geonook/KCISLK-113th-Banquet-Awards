@@ -75,7 +75,7 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/30 to-orange-500/30 rounded-2xl blur-xl" />
           <div className="relative px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
             <p
-              className="text-xl font-bold tracking-wider text-white drop-shadow-lg"
+              className="text-2xl font-bold tracking-wider text-white drop-shadow-lg"
               style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
             >
               七年同心 點石成金
@@ -89,7 +89,7 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-2xl blur-xl" />
           <div className="relative px-10 py-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
             <p
-              className="text-lg font-bold italic text-white drop-shadow-lg tracking-wide"
+              className="text-xl font-bold italic text-white drop-shadow-lg tracking-wide"
               style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
             >
               We started with rock - seven years on - we shine like gold
