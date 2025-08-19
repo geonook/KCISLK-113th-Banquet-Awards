@@ -261,12 +261,20 @@ export default function AwardPresentation() {
         )
 
       case 'toast-main':
-      case 'dining-main':
       case 'celebration-main':
         return (
           <ThanksgivingMainSlide
             title={config.mainTitle || "2025感恩迎新餐會"}
-            subtitle={config.type === 'toast-main' ? "Celebration Toast" : config.type === 'celebration-main' ? "Celebration Time" : "2025 Appreciation & Welcome Banquet"}
+            subtitle={config.type === 'toast-main' ? "Celebration Toast" : "Celebration Time"}
+            eventDate="2024年12月"
+          />
+        )
+
+      case 'dining-main':
+        return (
+          <ThanksgivingMainSlide
+            title="2025感恩迎新餐會"
+            subtitle="2025 Appreciation & Welcome Banquet"
             eventDate="2024年12月"
           />
         )
@@ -318,7 +326,7 @@ export default function AwardPresentation() {
         return (
           <PremiumTitleSlide 
             title="優秀同仁頒獎表揚" 
-            subtitle="2025 Appreciation & Welcome Banquet" 
+            subtitle="Excellence Awards & Staff Recognition" 
           />
         )
 
@@ -326,7 +334,7 @@ export default function AwardPresentation() {
         return (
           <PremiumTitleSlide 
             title="優秀同仁頒獎表揚" 
-            subtitle="2025 Appreciation & Welcome Banquet" 
+            subtitle="Excellence Awards & Staff Recognition" 
           />
         )
 

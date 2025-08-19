@@ -118,14 +118,15 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
               <div className="mb-10 animate-slide-up" style={{ animationDelay: "1s" }}>
                 {/* 主標題 */}
                 <h1
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-none whitespace-nowrap"
+                  className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-8 leading-none whitespace-nowrap"
                   style={{
                     background:
                       "linear-gradient(135deg, #f59e0b 0%, #ea580c 25%, #dc2626 50%, #7c3aed 75%, #2563eb 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
-                    filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))",
+                    filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.2))",
+                    textShadow: "4px 4px 12px rgba(0,0,0,0.4), 0 0 50px rgba(245, 158, 11, 0.5)",
                   }}
                 >
                   {title}

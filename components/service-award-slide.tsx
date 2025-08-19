@@ -283,7 +283,7 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
                                 years of dedicated service
                               </p>
                               <p>Your professionalism and passion are the cornerstone of our school's development</p>
-                              <p className="text-xl text-amber-700 font-bold">🌟 Honoring your educational commitment and perseverance 🌟</p>
+                              <p className="text-xl text-amber-700 font-bold whitespace-nowrap">🌟 Honoring your educational commitment and perseverance 🌟</p>
                             </div>
                           </>
                         ) : (

@@ -211,7 +211,7 @@ export function PerformanceSlide({
             />
 
             {/* 主卡片 */}
-            <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-14 shadow-2xl border border-white/30 overflow-hidden">
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-white/30 overflow-hidden">
               {/* 裝飾性幾何元素 - 表演主題色彩 */}
               <div className={`absolute top-0 left-0 w-full h-2 bg-gradient-to-r ${config.gradientColors}`} />
 
