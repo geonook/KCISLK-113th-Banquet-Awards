@@ -118,7 +118,7 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
               <div className="mb-10 animate-slide-up" style={{ animationDelay: "1s" }}>
                 {/* 主標題 */}
                 <h1
-                  className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-8 leading-none whitespace-nowrap"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-none whitespace-nowrap"
                   style={{
                     color: "white",
                     textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
