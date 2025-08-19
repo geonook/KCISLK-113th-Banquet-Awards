@@ -53,7 +53,7 @@ export const finalAwardData: AwardData = {
     {
       id: 6,
       photoUrl: "https://minio-hic.zeabur.app/award-photos/2d7e0325-3ab9-4ffb-bd00-398dbe4cf118.jpg",
-      department: "中學國際處",
+      department: "中學教務處",
       awardType: "10年資獎",
       recipientName: "林志龍",
       achievements: "",
@@ -61,7 +61,7 @@ export const finalAwardData: AwardData = {
     {
       id: 7,
       photoUrl: "https://minio-hic.zeabur.app/award-photos/0e063767-b747-4946-8711-4fda856fbd0a.jpg",
-      department: "小學國際處",
+      department: "中學國際處",
       awardType: "10 Years of Service Award",
       recipientName: "Mitchell David James",
       achievements: "",

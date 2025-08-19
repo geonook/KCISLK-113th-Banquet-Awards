@@ -76,6 +76,9 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
     return match ? match[1] : "多年"
   }
 
+  // 判斷是否為外籍老師
+  const isForeignTeacher = /^[A-Za-z\s]+$/.test(winner.recipientName)
+
   useEffect(() => {
     if (isActive) {
       setShowContent(false)
@@ -128,32 +131,32 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
       </div>
 
       {showContent && (
-        <div className="relative z-10 w-full max-w-6xl px-4 mx-auto animate-slide-up">
+        <div className="relative z-10 w-full max-w-7xl px-4 mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.1s" }}>
             {/* 背景光暈 - 金色主題 */}
             <div className="absolute inset-0 rounded-3xl blur-3xl scale-105 bg-gradient-to-r from-yellow-400/20 via-amber-400/20 to-orange-400/20" />
 
-            {/* 主卡片 - 增加padding 25% */}
-            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden p-16">
+            {/* 主卡片 - 統一尺寸與磐石獎一致 */}
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden p-10">
               {/* 頂部裝飾條 - 金色漸層 */}
               <div
                 className="absolute top-0 left-0 h-3 w-full animate-expand bg-gradient-to-r from-yellow-400 via-amber-500 via-orange-500 to-yellow-400"
                 style={{ animationDelay: "0.2s" }}
               />
 
-              {/* 年資獎章 - 特殊設計 */}
-              <div className="absolute -top-8 -right-8 z-10 animate-bounce-in" style={{ animationDelay: "0.3s" }}>
+              {/* 年資獎章 - 特殊設計 (+25%放大) */}
+              <div className="absolute -top-10 -right-10 z-10 animate-bounce-in" style={{ animationDelay: "0.3s" }}>
                 <div className="relative">
                   {/* 多層光暈效果 */}
                   <div className="absolute inset-0 rounded-full blur-xl animate-pulse bg-gradient-to-br from-yellow-400 to-amber-500" />
                   <div className="absolute -inset-2 rounded-full blur-lg animate-spin-slow bg-gradient-to-r from-yellow-300 to-orange-400 opacity-60" />
 
-                  {/* 獎章主體 */}
-                  <div className="relative w-32 h-32 rounded-full flex flex-col items-center justify-center text-white font-black shadow-2xl border-4 border-white bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-400">
-                    <div className="text-3xl mb-1">🏅</div>
-                    <div className="text-lg leading-tight text-center">
-                      <div className="text-2xl font-black">{getServiceYears()}</div>
-                      <div className="text-sm">年資</div>
+                  {/* 獎章主體 - 放大25% */}
+                  <div className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center text-white font-black shadow-2xl border-4 border-white bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-400">
+                    <div className="text-4xl mb-1">🏅</div>
+                    <div className="text-xl leading-tight text-center">
+                      <div className="text-3xl font-black">{getServiceYears()}</div>
+                      <div className="text-base">年資</div>
                     </div>
                   </div>
                 </div>
@@ -171,14 +174,14 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
                     <div className="absolute -inset-6 rounded-full opacity-40 animate-spin-slow bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-400" />
                     <div className="absolute -inset-4 rounded-full opacity-30 animate-spin-reverse bg-gradient-to-r from-amber-300 via-yellow-300 to-orange-300" />
 
-                    {/* 照片框架 - 更大尺寸 +25% */}
-                    <div className="w-96 h-96 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-yellow-300 group-hover:scale-105 transition-transform duration-300">
+                    {/* 照片框架 - 統一尺寸與其他獎項一致 */}
+                    <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-yellow-300 group-hover:scale-105 transition-transform duration-300">
                       {winner.photoUrl ? (
                         <Image
                           src={winner.photoUrl || "/placeholder.svg"}
                           alt={`${winner.recipientName} photo`}
-                          width={384}
-                          height={384}
+                          width={320}
+                          height={320}
                           className="object-cover w-full h-full"
                         />
                       ) : (
@@ -263,22 +266,47 @@ export function ServiceAwardSlide({ winner, isActive }: ServiceAwardSlideProps) 
 
                       {/* 感謝內容 */}
                       <div className="relative z-10 text-center">
-                        <h4 className="text-4xl font-black text-gray-800 mb-8 flex items-center justify-center gap-5">
-                          <span className="animate-bounce">🙏</span>
-                          感謝您的長期奉獻
-                          <span className="animate-bounce" style={{ animationDelay: "0.5s" }}>
-                            🙏
-                          </span>
-                        </h4>
+                        {isForeignTeacher ? (
+                          // 外籍老師英文版感謝詞
+                          <>
+                            <h4 className="text-4xl font-black text-gray-800 mb-8 flex items-center justify-center gap-5">
+                              <span className="animate-bounce">🙏</span>
+                              Thank You for Your Dedication
+                              <span className="animate-bounce" style={{ animationDelay: "0.5s" }}>
+                                🙏
+                              </span>
+                            </h4>
 
-                        <div className="text-2xl text-gray-800 leading-relaxed space-y-5" style={{textShadow: "1px 1px 3px rgba(255,255,255,0.8)"}}>
-                          <p className="font-semibold">
-                            感謝您 <span className="text-amber-600 font-black text-3xl">{getServiceYears()}</span>{" "}
-                            年來的辛勤付出
-                          </p>
-                          <p>您的專業與熱忱，是學校發展的重要基石</p>
-                          <p className="text-xl text-amber-700 font-bold">🌟 致敬您的教育初心與堅持 🌟</p>
-                        </div>
+                            <div className="text-2xl text-gray-800 leading-relaxed space-y-5" style={{textShadow: "1px 1px 3px rgba(255,255,255,0.8)"}}>
+                              <p className="font-semibold">
+                                Thank you for your <span className="text-amber-600 font-black text-3xl">{getServiceYears()}</span>{" "}
+                                years of dedicated service
+                              </p>
+                              <p>Your professionalism and passion are the cornerstone of our school's development</p>
+                              <p className="text-xl text-amber-700 font-bold">🌟 Honoring your educational commitment and perseverance 🌟</p>
+                            </div>
+                          </>
+                        ) : (
+                          // 中文版感謝詞
+                          <>
+                            <h4 className="text-4xl font-black text-gray-800 mb-8 flex items-center justify-center gap-5">
+                              <span className="animate-bounce">🙏</span>
+                              感謝您的長期奉獻
+                              <span className="animate-bounce" style={{ animationDelay: "0.5s" }}>
+                                🙏
+                              </span>
+                            </h4>
+
+                            <div className="text-2xl text-gray-800 leading-relaxed space-y-5" style={{textShadow: "1px 1px 3px rgba(255,255,255,0.8)"}}>
+                              <p className="font-semibold">
+                                感謝您 <span className="text-amber-600 font-black text-3xl">{getServiceYears()}</span>{" "}
+                                年來的辛勤付出
+                              </p>
+                              <p>您的專業與熱忱，是學校發展的重要基石</p>
+                              <p className="text-xl text-amber-700 font-bold">🌟 致敬您的教育初心與堅持 🌟</p>
+                            </div>
+                          </>
+                        )}
                       </div>
                     </div>
                   </div>

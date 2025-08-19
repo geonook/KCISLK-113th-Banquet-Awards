@@ -131,19 +131,19 @@ export function ExcellenceAwardSlide({ winner, isActive }: ExcellenceAwardSlideP
                 style={{ animationDelay: "0.2s" }}
               />
 
-              {/* 優質獎章 - 特殊設計 */}
-              <div className="absolute -top-8 -right-8 z-10 animate-bounce-in" style={{ animationDelay: "0.3s" }}>
+              {/* 優質獎章 - 特殊設計 (+25%放大) */}
+              <div className="absolute -top-10 -right-10 z-10 animate-bounce-in" style={{ animationDelay: "0.3s" }}>
                 <div className="relative">
                   {/* 多層光暈效果 */}
                   <div className="absolute inset-0 rounded-full blur-xl animate-pulse bg-gradient-to-br from-orange-400 to-red-500" />
                   <div className="absolute -inset-2 rounded-full blur-lg animate-spin-slow bg-gradient-to-r from-orange-300 to-pink-400 opacity-60" />
 
-                  {/* 獎章主體 */}
-                  <div className="relative w-32 h-32 rounded-full flex flex-col items-center justify-center text-white font-black shadow-2xl border-4 border-white bg-gradient-to-br from-orange-400 via-red-500 to-pink-500">
-                    <div className="text-3xl mb-1">🌟</div>
-                    <div className="text-lg leading-tight text-center">
-                      <div className="text-xl font-black">優質</div>
-                      <div className="text-sm">獎</div>
+                  {/* 獎章主體 - 放大25% */}
+                  <div className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center text-white font-black shadow-2xl border-4 border-white bg-gradient-to-br from-orange-400 via-red-500 to-pink-500">
+                    <div className="text-4xl mb-1">🌟</div>
+                    <div className="text-xl leading-tight text-center">
+                      <div className="text-2xl font-black">優質</div>
+                      <div className="text-base">獎</div>
                     </div>
                   </div>
                 </div>
