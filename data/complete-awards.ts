@@ -2,8 +2,8 @@ import type { AwardData } from "../types/award"
 
 // 更新標題
 export const completeAwardData: AwardData = {
-  title: "2025感恩迎新餐會",
-  subtitle: "2025 Appreciation & Welcome Banquet",
+  title: "2025 林口康橋感恩迎新餐會",
+  subtitle: "2025 KCISLK Appreciation & Welcome Banquet",
   winners: [
     {
       id: 1,

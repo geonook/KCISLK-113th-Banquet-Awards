@@ -266,8 +266,8 @@ export default function AwardPresentation() {
       case 'main':
         return (
           <ThanksgivingMainSlide
-            title="2025感恩迎新餐會"
-            subtitle="2025 Appreciation & Welcome Banquet"
+            title="2025 林口康橋感恩迎新餐會"
+            subtitle="2025 KCISLK Appreciation & Welcome Banquet"
             eventDate="2024年12月"
           />
         )
@@ -276,7 +276,7 @@ export default function AwardPresentation() {
       case 'celebration-main':
         return (
           <ThanksgivingMainSlide
-            title={config.mainTitle || "2025感恩迎新餐會"}
+            title={config.mainTitle || "2025 林口康橋感恩迎新餐會"}
             subtitle={config.type === 'toast-main' ? "Celebration Toast" : "Celebration Time"}
             eventDate="2024年12月"
           />
@@ -285,8 +285,8 @@ export default function AwardPresentation() {
       case 'dining-main':
         return (
           <ThanksgivingMainSlide
-            title="2025感恩迎新餐會"
-            subtitle="2025 Appreciation & Welcome Banquet"
+            title="2025 林口康橋感恩迎新餐會"
+            subtitle="2025 KCISLK Appreciation & Welcome Banquet"
             eventDate="2024年12月"
           />
         )
@@ -323,8 +323,8 @@ export default function AwardPresentation() {
           <ChairmanAddressSlide
             isActive={true}
             welcomeMessage={{
-              chinese: "歡迎各位同仁參加2025感恩迎新餐會，感謝大家一年來的辛勤付出與卓越表現。",
-              english: "Welcome to the 2025 Appreciation & Welcome Banquet. Thank you for your dedication and outstanding performance this year."
+              chinese: "歡迎各位同仁參加2025 林口康橋感恩迎新餐會，感謝大家一年來的辛勤付出與卓越表現。",
+              english: "Welcome to the 2025 KCISLK Appreciation & Welcome Banquet. Thank you for your dedication and outstanding performance this year."
             }}
             chairmanName="康橋董事長"
             chairmanTitle={{

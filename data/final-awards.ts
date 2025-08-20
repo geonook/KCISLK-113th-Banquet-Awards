@@ -6,13 +6,13 @@ import type { AwardData } from "../types/award"
 // 總得獎者: 50 位
 
 export const finalAwardData: AwardData = {
-  title: "2025感恩迎新餐會",
-  subtitle: "2025 Appreciation & Welcome Banquet",
+  title: "2025 林口康橋感恩迎新餐會",
+  subtitle: "2025 KCISLK Appreciation & Welcome Banquet",
   winners: [
     // 按照提供的順序排列
     {
       id: 1,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/5e03f1ca-1fb1-4d35-ad65-0d6319af2d10.jpg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/5c3f6469-367a-412d-be65-ef910f4b4d9d.jpg",
       department: "招生辦公室",
       awardType: "25年資獎",
       recipientName: "俞聖陶",
@@ -28,7 +28,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 3,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/413ea46e-21c6-4f49-ab7b-a138ffecd11a.jpg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/3404b6a5-3db8-4cea-887b-4873d1122eec.jpg",
       department: "探索教育中心",
       awardType: "15年資獎",
       recipientName: "游承恩",
@@ -36,7 +36,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 4,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/812dbcf5-62c6-44c4-b2c3-a10b5c54f6a9.jpg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/e721c11a-33b8-4981-aae5-97430cea058b.jpg",
       department: "探索教育中心",
       awardType: "15年資獎",
       recipientName: "葉郁庭",
@@ -44,7 +44,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 5,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/5ba302d6-b373-42d7-88f8-a691ef68f2b5.jpeg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/a2cf6921-ca31-4c3d-9941-91c08966df71.jpeg",
       department: "小學教務處",
       awardType: "10年資獎",
       recipientName: "江志軒",

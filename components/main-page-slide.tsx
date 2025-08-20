@@ -19,8 +19,8 @@ interface VariantContent {
 
 const variantContentMap: Record<MainPageSlideProps['variant'], VariantContent> = {
   thanksgiving: {
-    chineseTitle: "2025感恩迎新餐會",
-    englishSubtitle: "2025 Appreciation & Welcome Banquet",
+    chineseTitle: "2025 林口康橋感恩迎新餐會",
+    englishSubtitle: "2025 KCISLK Appreciation & Welcome Banquet",
     coreTheme: "感恩與團結",
     englishTheme: "Gratitude & Unity",
     leftSlogan: "心懷感恩 凝聚力量",

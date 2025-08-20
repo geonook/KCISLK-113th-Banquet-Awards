@@ -6,8 +6,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "2025感恩迎新餐會",
-  description: "2025 Appreciation & Welcome Banquet - Award Presentation Template",
+  title: "2025 林口康橋感恩迎新餐會",
+  description: "2025 KCISLK Appreciation & Welcome Banquet - Award Presentation Template",
     generator: 'v0.app'
 }
 

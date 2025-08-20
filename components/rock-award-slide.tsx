@@ -162,13 +162,13 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
                     <div className="absolute -inset-4 rounded-full opacity-30 animate-spin-reverse bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300" />
 
                     {/* 照片框架 - 更大尺寸 +25% */}
-                    <div className="w-[35rem] h-[35rem] rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-purple-300 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-[30rem] h-[30rem] rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-purple-300 group-hover:scale-105 transition-transform duration-300">
                       {winner.photoUrl ? (
                         <Image
                           src={winner.photoUrl || "/placeholder.svg"}
                           alt={`${winner.recipientName} photo`}
-                          width={560}
-                          height={560}
+                          width={480}
+                          height={480}
                           className="object-cover w-full h-full"
                         />
                       ) : (
@@ -195,12 +195,6 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
                     {/* 磐石獎專用裝飾 */}
                     <div className="absolute -top-3 -left-3 text-purple-400 text-2xl drop-shadow-lg animate-spin-slow">
                       💎
-                    </div>
-                    <div
-                      className="absolute -bottom-3 -right-3 text-blue-400 text-xl drop-shadow-lg animate-spin-reverse"
-                      style={{ animationDelay: "1s" }}
-                    >
-                      🏆
                     </div>
                   </div>
                 </div>
