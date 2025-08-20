@@ -13,6 +13,7 @@ import { Service15YearTitleSlide } from "../components/service-15-year-title-sli
 import { Service10YearTitleSlide } from "../components/service-10-year-title-slide"
 import { RockAwardTitleSlide } from "../components/rock-award-title-slide"
 import { ExcellenceAwardTitleSlide } from "../components/excellence-award-title-slide"
+import { AwardCeremonyTitleSlide } from "../components/award-ceremony-title-slide"
 import { FullscreenNavigation } from "../components/fullscreen-navigation"
 import { PresentationContainer } from "../components/presentation-container"
 import { awardLoader } from "../lib/award-loader"
@@ -385,7 +386,7 @@ export default function AwardPresentation() {
 
       case 'first-half-title':
         return (
-          <PremiumTitleSlide 
+          <AwardCeremonyTitleSlide 
             title="優秀同仁頒獎表揚" 
             subtitle="Excellence Awards & Staff Recognition" 
           />
@@ -393,7 +394,7 @@ export default function AwardPresentation() {
 
       case 'second-half-title':
         return (
-          <PremiumTitleSlide 
+          <AwardCeremonyTitleSlide 
             title="優秀同仁頒獎表揚" 
             subtitle="Excellence Awards & Staff Recognition" 
           />
