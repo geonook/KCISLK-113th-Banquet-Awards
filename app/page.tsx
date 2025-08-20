@@ -45,6 +45,9 @@ export default function AwardPresentation() {
   const [showPhotoPanel, setShowPhotoPanel] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   
+  // 部署測試標記 - v2024.8.20.2
+  const deployVersion = "v2024.8.20.2"
+  
   // 獎項智能分組
   const getAwardGroups = () => {
     if (!awardData) return { firstHalf: [], secondHalf: [] }
