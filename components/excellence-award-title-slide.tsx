@@ -35,8 +35,8 @@ export function ExcellenceAwardTitleSlide({ isActive = true }: ExcellenceAwardTi
         className="absolute inset-0 animate-fade-in"
         style={{
           background: `
-            radial-gradient(circle at 30% 20%, rgba(34, 197, 94, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 70% 80%, rgba(16, 185, 129, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 30% 20%, rgba(249, 115, 22, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 70% 80%, rgba(239, 68, 68, 0.3) 0%, transparent 50%),
             linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.4) 100%)
           `,
           animationDelay: "0.5s",
@@ -56,7 +56,7 @@ export function ExcellenceAwardTitleSlide({ isActive = true }: ExcellenceAwardTi
             }}
           >
             <div
-              className={`w-3 h-3 rounded-full shadow-lg animate-sparkle bg-gradient-to-r from-green-400 via-emerald-500 to-teal-600`}
+              className={`w-3 h-3 rounded-full shadow-lg animate-sparkle bg-gradient-to-r from-orange-400 via-red-500 to-pink-500`}
               style={{ animationDelay: `${Math.random() * 2}s` }}
             />
           </div>
@@ -66,8 +66,8 @@ export function ExcellenceAwardTitleSlide({ isActive = true }: ExcellenceAwardTi
       {/* 優質標識 */}
       <div className="absolute top-12 left-12 z-20 animate-slide-right" style={{ animationDelay: "0.8s" }}>
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-emerald-600 to-teal-700 rounded-2xl blur-xl opacity-60" />
-          <div className="relative px-8 py-4 rounded-2xl bg-white/15 backdrop-blur-md border border-green-200/30 shadow-2xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 rounded-2xl blur-xl opacity-60" />
+          <div className="relative px-8 py-4 rounded-2xl bg-white/15 backdrop-blur-md border border-orange-200/30 shadow-2xl">
             <div className="flex items-center gap-3">
               <span className="text-3xl animate-bounce" style={{ animationDelay: "1s" }}>
                 ⭐
@@ -90,7 +90,7 @@ export function ExcellenceAwardTitleSlide({ isActive = true }: ExcellenceAwardTi
             🌟
           </div>
           <div className="text-4xl animate-pulse" style={{ animationDelay: "1.6s" }}>
-            💚
+            🏆
           </div>
         </div>
       </div>
@@ -100,16 +100,16 @@ export function ExcellenceAwardTitleSlide({ isActive = true }: ExcellenceAwardTi
         <div className="relative z-10 text-center px-6 w-[85%] max-w-[4800px] mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.8s" }}>
             {/* 背景光暈效果 */}
-            <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 via-emerald-500/20 to-teal-600/20 rounded-3xl blur-3xl scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 via-red-500/20 to-pink-500/20 rounded-3xl blur-3xl scale-110" />
 
             {/* 主卡片 */}
-            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-green-200/30 overflow-hidden">
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-orange-200/30 overflow-hidden">
               {/* 裝飾性幾何元素 */}
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 via-emerald-600 to-teal-700" />
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500" />
 
               {/* 動態裝飾圓圈 */}
-              <div className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-br from-green-500 via-emerald-600 to-teal-700 rounded-full opacity-30 animate-spin-slow" />
-              <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-teal-500 via-green-600 to-emerald-700 rounded-full opacity-30 animate-spin-reverse" />
+              <div className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 rounded-full opacity-30 animate-spin-slow" />
+              <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-pink-500 via-orange-500 to-red-500 rounded-full opacity-30 animate-spin-reverse" />
 
               {/* 標題區域 */}
               <div className="mb-10 animate-slide-up" style={{ animationDelay: "1.2s" }}>
@@ -150,15 +150,15 @@ export function ExcellenceAwardTitleSlide({ isActive = true }: ExcellenceAwardTi
 
               {/* 裝飾線條 */}
               <div className="relative mb-10 animate-slide-up" style={{ animationDelay: "1.8s" }}>
-                <div className="h-1 bg-gradient-to-r from-green-500 via-emerald-600 to-teal-700 mx-auto animate-expand" />
-                <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-green-300 to-white opacity-60 blur-sm animate-shimmer" />
+                <div className="h-1 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 mx-auto animate-expand" />
+                <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-orange-300 to-white opacity-60 blur-sm animate-shimmer" />
               </div>
 
               {/* 特色描述 */}
               <div className="space-y-6 animate-slide-up" style={{ animationDelay: "2s" }}>
                 <div className="flex flex-wrap justify-center items-center gap-6 text-lg md:text-xl">
                   <div
-                    className="px-8 py-4 bg-gradient-to-r from-green-50 to-emerald-100 rounded-full border border-green-200 shadow-lg animate-slide-right hover:scale-105 transition-transform"
+                    className="px-8 py-4 bg-gradient-to-r from-orange-50 to-red-100 rounded-full border border-orange-200 shadow-lg animate-slide-right hover:scale-105 transition-transform"
                     style={{ animationDelay: "2.2s" }}
                   >
                     <p className="font-semibold text-gray-700 whitespace-nowrap">
@@ -167,12 +167,12 @@ export function ExcellenceAwardTitleSlide({ isActive = true }: ExcellenceAwardTi
                   </div>
 
                   <div
-                    className="w-4 h-4 bg-gradient-to-r from-green-500 via-emerald-600 to-teal-700 rounded-full animate-pulse"
+                    className="w-4 h-4 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 rounded-full animate-pulse"
                     style={{ animationDelay: "2.4s" }}
                   />
 
                   <div
-                    className="px-8 py-4 bg-gradient-to-r from-emerald-50 to-teal-100 rounded-full border border-emerald-200 shadow-lg animate-slide-left hover:scale-105 transition-transform"
+                    className="px-8 py-4 bg-gradient-to-r from-red-50 to-pink-100 rounded-full border border-red-200 shadow-lg animate-slide-left hover:scale-105 transition-transform"
                     style={{ animationDelay: "2.6s" }}
                   >
                     <p className="font-semibold text-gray-700 whitespace-nowrap">
@@ -183,7 +183,7 @@ export function ExcellenceAwardTitleSlide({ isActive = true }: ExcellenceAwardTi
 
                 {/* 榮譽說明 */}
                 <div
-                  className="mt-10 p-8 bg-gradient-to-r from-white/80 to-green-50/80 rounded-2xl border border-green-200 shadow-inner animate-slide-up"
+                  className="mt-10 p-8 bg-gradient-to-r from-white/80 to-orange-50/80 rounded-2xl border border-orange-200 shadow-inner animate-slide-up"
                   style={{ animationDelay: "2.8s" }}
                 >
                   <p className="text-xl font-medium text-gray-800 mb-3" style={{textShadow: "1px 1px 2px rgba(255,255,255,0.8)"}}>

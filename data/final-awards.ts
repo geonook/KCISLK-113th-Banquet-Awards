@@ -250,7 +250,7 @@ export const finalAwardData: AwardData = {
       photoUrl: "https://minio-hic.zeabur.app/award-photos/fdd66d8c-86b6-4a99-934c-92dc0e78dd6c.jpg",
       department: "小學國際處",
       awardType: "優質獎",
-      recipientName: "姜孟妤 Meg Chiang",
+      recipientName: "姜孟妤",
       achievements:
         "Ms. Meg Chiang consistently demonstrates compassion and professionalism in her role. She is deeply supportive of both her students and colleagues, creating a positive and inclusive classroom environment where students feel safe and encouraged to grow.",
     },
@@ -349,7 +349,7 @@ export const finalAwardData: AwardData = {
       photoUrl: "https://minio-hic.zeabur.app/award-photos/606ee5d1-5989-4763-ab54-47a28c4e5a6a.jpeg",
       department: "小學國際處",
       awardType: "優質獎",
-      recipientName: "李文歆 Peko Lee",
+      recipientName: "李文歆",
       achievements:
         "Ms. Peko Lee showed her outstanding initiative and leadership in Spring 2025. Taking on the challenge as a G1-2 Head Teacher, Peko proactively modified the G1-2 LT curriculum, significantly enhancing it with more reading components and a more systematic assessment framework.",
     },
@@ -358,7 +358,7 @@ export const finalAwardData: AwardData = {
       photoUrl: "https://minio-hic.zeabur.app/award-photos/0809870c-62bb-4228-a727-d7734480c940.jpeg",
       department: "小學國際處",
       awardType: "優質獎",
-      recipientName: "黃俐璇 Scarlett Huang",
+      recipientName: "黃俐璇",
       achievements:
         "Ms. Scarlett Huang is being recognized for her exceptional dedication to her educational role. Her thoughtful contributions and willingness to share ideas have supported team growth and continuous improvement.",
     },

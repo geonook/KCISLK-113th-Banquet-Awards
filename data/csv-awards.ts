@@ -105,7 +105,7 @@ export const csvAwardData: AwardData = {
       id: 14,
       department: "小學國際處",
       awardType: "優質獎",
-      recipientName: "姜孟妤 Meg Chiang",
+      recipientName: "姜孟妤",
       achievements:
         "Ms. Meg Chiang consistently demonstrates compassion and professionalism in her role. She is deeply supportive of both her students and colleagues, creating a positive and inclusive classroom environment where students feel safe and encouraged to grow. Her commitment to social-emotional learning is evident not only through her thoughtfully designed lessons but also in her daily interactions, where she models empathy and respect. Her efforts have made a meaningful difference in the learning community.",
     },
@@ -113,7 +113,7 @@ export const csvAwardData: AwardData = {
       id: 15,
       department: "小學國際處",
       awardType: "優質獎",
-      recipientName: "李文歆 Peko Lee",
+      recipientName: "李文歆",
       achievements:
         "Ms. Peko Lee showed her outstanding initiative and leadership in Spring 2025. Taking on the challenge as a G1-2 Head Teacher, Peko proactively modified the G1-2 LT curriculum, significantly enhancing it with more reading components and a more systematic assessment framework. Her dedication to improving the curriculum has directly contributed to a stronger learning experience for our students.",
     },
@@ -121,7 +121,7 @@ export const csvAwardData: AwardData = {
       id: 16,
       department: "小學國際處",
       awardType: "優質獎",
-      recipientName: "黃俐璇 Scarlett Huang",
+      recipientName: "黃俐璇",
       achievements:
         "Ms. Scarlett Huang is being recognized for her exceptional dedication to her educational role. Her thoughtful contributions and willingness to share ideas have supported team growth and continuous improvement. In addition, Scarlett has consistently worked closely with parents to not only help their children understand the importance of reading, but also to ignite a genuine passion for it. Her commitment to fostering this crucial skill—through meaningful collaboration with families—has had a significant and lasting impact on her students.",
     },
