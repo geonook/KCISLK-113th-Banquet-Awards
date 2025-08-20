@@ -162,13 +162,13 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
                     <div className="absolute -inset-4 rounded-full opacity-30 animate-spin-reverse bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300" />
 
                     {/* 照片框架 - 更大尺寸 +25% */}
-                    <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-purple-300 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-[35rem] h-[35rem] rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-purple-300 group-hover:scale-105 transition-transform duration-300">
                       {winner.photoUrl ? (
                         <Image
                           src={winner.photoUrl || "/placeholder.svg"}
                           alt={`${winner.recipientName} photo`}
-                          width={320}
-                          height={320}
+                          width={560}
+                          height={560}
                           className="object-cover w-full h-full"
                         />
                       ) : (
