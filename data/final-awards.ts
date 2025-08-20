@@ -131,7 +131,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 15,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/096fef0b-9d5a-4b26-bd22-9473194d0fe4.jpeg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/13738570-c56f-4d8e-b400-923562c3b46a.jpeg",
       department: "小學教務處",
       awardType: "優質獎",
       recipientName: "陳襄琦",
@@ -211,6 +211,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 24,
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/f53bc374-fe0e-4baf-9e35-4b4b7c4432c3.jpg",
       department: "幼兒園",
       awardType: "優質獎",
       recipientName: "Shamovtseva Victoria",

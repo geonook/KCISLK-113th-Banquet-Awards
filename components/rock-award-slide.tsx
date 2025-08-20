@@ -118,7 +118,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
       </div>
 
       {showContent && (
-        <div className="relative z-10 w-full max-w-7xl px-4 mx-auto animate-slide-up">
+        <div className="relative z-10 w-[85%] max-w-[4800px] px-4 mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.1s" }}>
             {/* 背景光暈 - 紫藍色主題 */}
             <div className="absolute inset-0 rounded-3xl blur-3xl scale-105 bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-indigo-400/20" />

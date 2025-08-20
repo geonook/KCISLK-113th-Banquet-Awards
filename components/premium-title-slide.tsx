@@ -100,7 +100,7 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
 
       {/* 主要內容區域 */}
       {showContent && (
-        <div className="relative z-10 text-center px-6 w-full max-w-7xl mx-auto animate-slide-up">
+        <div className="relative z-10 text-center px-6 w-[85%] max-w-[4800px] mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.8s" }}>
             {/* 背景光暈效果 */}
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 via-orange-400/20 to-red-400/20 rounded-3xl blur-3xl scale-110" />
