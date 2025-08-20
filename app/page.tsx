@@ -9,6 +9,8 @@ import { ThanksgivingMainSlide } from "../components/thanksgiving-main-slide"
 import { PerformanceSlide } from "../components/performance-slide"
 import { ChairmanAddressSlide } from "../components/chairman-address-slide"
 import { Service25YearTitleSlide } from "../components/service-25-year-title-slide"
+import { Service15YearTitleSlide } from "../components/service-15-year-title-slide"
+import { Service10YearTitleSlide } from "../components/service-10-year-title-slide"
 import { RockAwardTitleSlide } from "../components/rock-award-title-slide"
 import { ExcellenceAwardTitleSlide } from "../components/excellence-award-title-slide"
 import { FullscreenNavigation } from "../components/fullscreen-navigation"
@@ -401,20 +403,10 @@ export default function AwardPresentation() {
         return <Service25YearTitleSlide />
 
       case '15-year-service-title':
-        return (
-          <PremiumTitleSlide 
-            title="15年年資獎" 
-            subtitle="15 Years of Service Award" 
-          />
-        )
+        return <Service15YearTitleSlide />
 
       case '10-year-service-title':
-        return (
-          <PremiumTitleSlide 
-            title="10年年資獎" 
-            subtitle="10 Years of Service Award" 
-          />
-        )
+        return <Service10YearTitleSlide />
 
       case 'rock-award-title':
         return <RockAwardTitleSlide />
