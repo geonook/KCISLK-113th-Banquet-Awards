@@ -236,16 +236,22 @@ export function PerformanceSlide({
 
                 {/* 英文副標題 */}
                 <h2
-                  className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-semibold tracking-wide mb-6 animate-slide-up"
-                  style={{ animationDelay: "1.4s" }}
+                  className="text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-wide mb-6 animate-slide-up"
+                  style={{ 
+                    animationDelay: "1.4s",
+                    textShadow: "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1)"
+                  }}
                 >
                   {config.englishTitle}
                 </h2>
 
                 {/* 表演描述 */}
                 <p
-                  className="text-lg md:text-xl text-gray-600 font-medium animate-slide-up"
-                  style={{ animationDelay: "1.6s" }}
+                  className="text-lg md:text-xl text-white font-medium animate-slide-up"
+                  style={{ 
+                    animationDelay: "1.6s",
+                    textShadow: "2px 2px 6px rgba(0,0,0,0.7), 0 0 15px rgba(255,255,255,0.1)"
+                  }}
                 >
                   {config.description}
                 </p>

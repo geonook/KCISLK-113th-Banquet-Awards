@@ -8,6 +8,7 @@ import { ExcellenceAwardSlide } from "../components/excellence-award-slide"
 import { ThanksgivingMainSlide } from "../components/thanksgiving-main-slide"
 import { PerformanceSlide } from "../components/performance-slide"
 import { ChairmanAddressSlide } from "../components/chairman-address-slide"
+import { Service25YearTitleSlide } from "../components/service-25-year-title-slide"
 import { FullscreenNavigation } from "../components/fullscreen-navigation"
 import { PresentationContainer } from "../components/presentation-container"
 import { awardLoader } from "../lib/award-loader"
@@ -23,6 +24,7 @@ type SlideType =
   | 'toast-main'
   | 'first-half-title'
   | 'first-half-award'
+  | '25-year-service-title'
   | '15-year-service-title'
   | '10-year-service-title'
   | 'choir-performance'
@@ -79,6 +81,11 @@ export default function AwardPresentation() {
     
     // 6-18. 上半場獎項 (年資獎 + 磐石獎)
     firstHalf.forEach((_, index) => {
+      // 在俞聖陶(25年資獎, index: 0)之前插入25年年資獎標題頁
+      if (index === 0) { // 俞聖陶是id:1, 在firstHalf中的index是0
+        configs.push({ type: '25-year-service-title' })
+      }
+      
       configs.push({ type: 'first-half-award', winnerIndex: index })
       
       // 在葉郁庭(15年資獎最後一位, index: 3)之後插入15年年資獎標題頁
@@ -352,6 +359,9 @@ export default function AwardPresentation() {
             subtitle="Excellence Awards & Staff Recognition" 
           />
         )
+
+      case '25-year-service-title':
+        return <Service25YearTitleSlide />
 
       case '15-year-service-title':
         return (
