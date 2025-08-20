@@ -9,6 +9,8 @@ import { ThanksgivingMainSlide } from "../components/thanksgiving-main-slide"
 import { PerformanceSlide } from "../components/performance-slide"
 import { ChairmanAddressSlide } from "../components/chairman-address-slide"
 import { Service25YearTitleSlide } from "../components/service-25-year-title-slide"
+import { RockAwardTitleSlide } from "../components/rock-award-title-slide"
+import { ExcellenceAwardTitleSlide } from "../components/excellence-award-title-slide"
 import { FullscreenNavigation } from "../components/fullscreen-navigation"
 import { PresentationContainer } from "../components/presentation-container"
 import { awardLoader } from "../lib/award-loader"
@@ -27,6 +29,8 @@ type SlideType =
   | '25-year-service-title'
   | '15-year-service-title'
   | '10-year-service-title'
+  | 'rock-award-title'
+  | 'excellence-award-title'
   | 'choir-performance'
   | 'dining-main'
   | 'second-half-title'
@@ -86,16 +90,31 @@ export default function AwardPresentation() {
         configs.push({ type: '25-year-service-title' })
       }
       
-      configs.push({ type: 'first-half-award', winnerIndex: index })
-      
-      // 在葉郁庭(15年資獎最後一位, index: 3)之後插入15年年資獎標題頁
-      if (index === 3) { // 葉郁庭是id:4, 在firstHalf中的index是3
+      // 在羅幸基(15年資獎, index: 1)之前插入15年年資獎標題頁
+      if (index === 1) { // 羅幸基是id:2, 在firstHalf中的index是1
         configs.push({ type: '15-year-service-title' })
       }
       
-      // 在Mitchell David James(10年資獎最後一位, index: 6)之後插入10年年資獎標題頁
-      if (index === 6) { // Mitchell David James是id:7, 在firstHalf中的index是6
+      // 在江志軒(10年資獎, index: 4)之前插入10年年資獎標題頁
+      if (index === 4) { // 江志軒是id:5, 在firstHalf中的index是4
         configs.push({ type: '10-year-service-title' })
+      }
+      
+      // 在黃于庭(磐石獎, index: 7)之前插入磐石獎標題頁
+      if (index === 7) { // 黃于庭是id:8, 在firstHalf中的index是7
+        configs.push({ type: 'rock-award-title' })
+      }
+      
+      configs.push({ type: 'first-half-award', winnerIndex: index })
+      
+      // 在廖婉柔(磐石獎最後一位, index: 12)之後插入磐石獎標題頁
+      if (index === 12) { // 廖婉柔是id:13, 在firstHalf中的index是12
+        configs.push({ type: 'rock-award-title' })
+      }
+      
+      // 在何愛玲(優質獎, index: 13)之前插入優質獎標題頁
+      if (index === 13) { // 何愛玲是id:14, 在firstHalf中的index是13
+        configs.push({ type: 'excellence-award-title' })
       }
     })
     
@@ -110,7 +129,25 @@ export default function AwardPresentation() {
     
     // 22-58. 下半場獎項 (優質獎)
     secondHalf.forEach((_, index) => {
+      // 在李雅琦(優質獎, index: 12)之前插入優質獎標題頁
+      // 李雅琦是id:26, 在secondHalf中的index是12 (id 14-25已過，26-13=13-1=12)
+      if (index === 12) {
+        configs.push({ type: 'excellence-award-title' })
+      }
+      
       configs.push({ type: 'second-half-award', winnerIndex: index })
+      
+      // 在許友欽(優質獎, index: 24)之前插入優質獎標題頁  
+      // 許友欽是id:38, 在secondHalf中的index是24 (38-13-1=24)
+      if (index === 24) {
+        configs.push({ type: 'excellence-award-title' })
+      }
+      
+      // 在周俊逸(優質獎最後一位, index: 36)之後插入優質獎標題頁
+      // 周俊逸是id:50, 在secondHalf中的index是36 (50-13-1=36)
+      if (index === 36) {
+        configs.push({ type: 'excellence-award-title' })
+      }
     })
     
     configs.push(
@@ -378,6 +415,12 @@ export default function AwardPresentation() {
             subtitle="10 Years of Service Award" 
           />
         )
+
+      case 'rock-award-title':
+        return <RockAwardTitleSlide />
+
+      case 'excellence-award-title':
+        return <ExcellenceAwardTitleSlide />
 
       case 'first-half-award':
         if (config.winnerIndex !== undefined) {

@@ -12,7 +12,7 @@ export const finalAwardData: AwardData = {
     // 按照提供的順序排列
     {
       id: 1,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/5c3f6469-367a-412d-be65-ef910f4b4d9d.jpg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/d8884f60-6f9e-49e8-80c6-da986ed5fcf0.jpg",
       department: "招生辦公室",
       awardType: "25年資獎",
       recipientName: "俞聖陶",
