@@ -167,7 +167,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 19,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/dea0c8fb-d802-4551-8ae7-7efc6e8e4c61.jpg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/c04bb11b-64d5-4c99-9062-683364abbaa7.jpg",
       department: "中學國際處",
       awardType: "優質獎",
       recipientName: "謝岱芬",
@@ -310,7 +310,7 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 35,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/427c6634-6d59-49df-b05b-af32daa94a12.jpg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/78b10919-a81a-4a2b-b399-64de0847778f.jpg",
       department: "探索教育中心",
       awardType: "優質獎",
       recipientName: "陳玟卉",

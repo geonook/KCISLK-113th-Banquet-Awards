@@ -510,6 +510,7 @@ export default function AwardPresentation() {
               currentSlide={currentSlide}
               totalSlides={totalSlides}
               winners={awardData?.winners || []}
+              slideConfigs={slideConfigs}
               onPrevious={previousSlide}
               onNext={nextSlide}
               onGoToStart={goToStart}

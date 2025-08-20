@@ -5,10 +5,18 @@ import { ChevronLeft, ChevronRight, Home, Music, Heart, Award, Mic, Utensils, Pa
 import { Button } from "@/components/ui/button"
 import type { AwardWinner } from "@/types/award"
 
+// 投影片配置介面定義
+interface SlideConfig {
+  type: string
+  winnerIndex?: number
+  mainTitle?: string
+}
+
 interface FullscreenNavigationProps {
   currentSlide: number
   totalSlides: number
   winners?: AwardWinner[]
+  slideConfigs?: SlideConfig[]
   onPrevious: () => void
   onNext: () => void
   onGoToStart: () => void
@@ -34,6 +42,7 @@ export function FullscreenNavigation({
   currentSlide,
   totalSlides,
   winners = [],
+  slideConfigs = [],
   onPrevious,
   onNext,
   onGoToStart,
@@ -43,22 +52,19 @@ export function FullscreenNavigation({
 
   // 獎項跳轉處理
   const handleAwardJump = (awardType: string) => {
-    if (!onGoToSlide || !winners.length) return
+    if (!onGoToSlide || !slideConfigs.length) return
     
-    // 找到第一個符合獎項類型的得獎者在線性流程中的位置
+    // 動態找到對應獎項標題頁的位置
     const getAwardTypeSlideIndex = (type: string) => {
       if (type === "service") {
-        // 年資獎在上半場獎項中，從第5個投影片開始（索引4）
-        return 5 // 第一個年資獎位置
+        // 找到25年年資獎標題頁
+        return slideConfigs.findIndex(config => config.type === '25-year-service-title')
       } else if (type === "rock") {
-        // 磐石獎也在上半場，需要找到第一個磐石獎位置
-        const firstRockIndex = winners.findIndex(w => w.awardType.includes("磐石獎"))
-        if (firstRockIndex >= 0 && firstRockIndex < 13) {
-          return 5 + firstRockIndex // 上半場基礎位置 + 獎項索引
-        }
+        // 找到磐石獎標題頁
+        return slideConfigs.findIndex(config => config.type === 'rock-award-title')
       } else if (type === "excellence") {
-        // 優質獎在下半場，從第21個投影片開始
-        return 21 // 下半場頒獎首頁後的第一個優質獎
+        // 找到優質獎標題頁
+        return slideConfigs.findIndex(config => config.type === 'excellence-award-title')
       }
       return 0
     }
