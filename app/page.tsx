@@ -110,14 +110,19 @@ export default function AwardPresentation() {
       
       configs.push({ type: 'first-half-award', winnerIndex: index })
       
+      // 在葉郁庭(15年資獎最後一位, index: 3)之後插入15年年資獎標題頁 (拍照用)
+      if (index === 3) { // 葉郁庭是id:4, 在firstHalf中的index是3
+        configs.push({ type: '15-year-service-title' })
+      }
+      
+      // 在Mitchell David James(10年資獎最後一位, index: 6)之後插入10年年資獎標題頁 (拍照用)
+      if (index === 6) { // Mitchell David James是id:7, 在firstHalf中的index是6
+        configs.push({ type: '10-year-service-title' })
+      }
+      
       // 在廖婉柔(磐石獎最後一位, index: 12)之後插入磐石獎標題頁
       if (index === 12) { // 廖婉柔是id:13, 在firstHalf中的index是12
         configs.push({ type: 'rock-award-title' })
-      }
-      
-      // 在何愛玲(優質獎, index: 13)之前插入優質獎標題頁
-      if (index === 13) { // 何愛玲是id:14, 在firstHalf中的index是13
-        configs.push({ type: 'excellence-award-title' })
       }
     })
     
@@ -132,7 +137,12 @@ export default function AwardPresentation() {
     
     // 22-58. 下半場獎項 (優質獎)
     secondHalf.forEach((_, index) => {
-      // 在李雅琦(優質獎, index: 12)之前插入優質獎標題頁
+      // 在何愛玲(優質獎, index: 0)之前插入優質獎標題頁
+      if (index === 0) { // 何愛玲是id:14, 在secondHalf中的index是0
+        configs.push({ type: 'excellence-award-title' })
+      }
+      
+      // 在李雅琦(優質獎, index: 12)之前插入優質獎標題頁 (拍照用)
       // 李雅琦是id:26, 在secondHalf中的index是12 (id 14-25已過，26-13=13-1=12)
       if (index === 12) {
         configs.push({ type: 'excellence-award-title' })
