@@ -118,7 +118,7 @@ export function ExcellenceAwardSlide({ winner, isActive }: ExcellenceAwardSlideP
       </div>
 
       {showContent && (
-        <div className="relative z-10 w-[85%] max-w-[1200px] px-4 mx-auto animate-slide-up">
+        <div className="relative z-10 w-[90%] max-w-[1400px] px-4 mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.1s" }}>
             {/* 背景光暈 - 橙紅色主題 */}
             <div className="absolute inset-0 rounded-3xl blur-3xl scale-105 bg-gradient-to-r from-orange-400/20 via-red-400/20 to-pink-400/20" />
