@@ -84,19 +84,6 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
         </div>
       </div>
 
-      <div className="absolute bottom-36 right-12 z-20 animate-slide-left" style={{ animationDelay: "1s" }}>
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-2xl blur-xl" />
-          <div className="relative px-10 py-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
-            <p
-              className="text-xl font-bold italic text-white drop-shadow-lg tracking-wide"
-              style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
-            >
-              We started with rock - seven years on - we shine like gold
-            </p>
-          </div>
-        </div>
-      </div>
 
       {/* 主要內容區域 */}
       {showContent && (
