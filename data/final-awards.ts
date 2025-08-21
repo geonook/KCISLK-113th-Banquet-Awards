@@ -220,12 +220,12 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 25,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/3e687b10-f7a6-4a62-853b-805046bc9868.jpeg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/48e26e91-e1d7-4d98-9629-2a7ae5c252a2.jpg",
       department: "幼兒園",
       awardType: "優質獎",
-      recipientName: "邱雅詩",
+      recipientName: "Hedges Justin Holmes",
       achievements:
-        "教師具備深厚幼教課程專業，無私分享並提供實務協助，引導教師團隊優化主題課程內涵。\n\n工作態度積極認真，展現高度責任感與細心精神，善於觀察且反應靈敏，橫向溝通無虞。\n\n積極主動協助園務，穩定團隊運作，為團隊中備受信任的夥伴。",
+        "善於營造適齡適性學習環境，班級經營良好，運用策略讓幼生於課堂中安心自信且能積極參與學習。\n\n在英文主題教學中展現教學專業與成效，課程設計深受幼生喜愛，並獲得家長肯定與信賴。\n\n教師樂於分享教學經驗，給予具體回饋，展現良好團隊精神。",
     },
     {
       id: 26,
@@ -436,12 +436,12 @@ export const finalAwardData: AwardData = {
     },
     {
       id: 49,
-      photoUrl: "https://minio-hic.zeabur.app/award-photos/48e26e91-e1d7-4d98-9629-2a7ae5c252a2.jpg",
+      photoUrl: "https://minio-hic.zeabur.app/award-photos/3e687b10-f7a6-4a62-853b-805046bc9868.jpeg",
       department: "幼兒園",
       awardType: "優質獎",
-      recipientName: "Hedges Justin Holmes",
+      recipientName: "邱雅詩",
       achievements:
-        "善於營造適齡適性學習環境，班級經營良好，運用策略讓幼生於課堂中安心自信且能積極參與學習。\n\n在英文主題教學中展現教學專業與成效，課程設計深受幼生喜愛，並獲得家長肯定與信賴。\n\n教師樂於分享教學經驗，給予具體回饋，展現良好團隊精神。",
+        "教師具備深厚幼教課程專業，無私分享並提供實務協助，引導教師團隊優化主題課程內涵。\n\n工作態度積極認真，展現高度責任感與細心精神，善於觀察且反應靈敏，橫向溝通無虞。\n\n積極主動協助園務，穩定團隊運作，為團隊中備受信任的夥伴。",
     },
     {
       id: 50,
