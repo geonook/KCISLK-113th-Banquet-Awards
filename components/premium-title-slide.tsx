@@ -132,7 +132,7 @@ export function PremiumTitleSlide({ title, subtitle }: PremiumTitleSlideProps) {
               {/* 核心理念區域 */}
               <div className="space-y-8 animate-slide-up" style={{ animationDelay: "1.6s" }}>
                 <p className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 hover:scale-105 transition-transform duration-200">
-                  Kang Chiao brings me the world
+                  Kang Chiao Brings Me the World
                 </p>
 
                 <div className="flex flex-wrap justify-center items-center gap-4 text-lg md:text-xl">

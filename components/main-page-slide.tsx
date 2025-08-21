@@ -218,7 +218,7 @@ export function MainPageSlide({ variant, isActive = true }: MainPageSlideProps) 
                     style={{ animationDelay: "2.2s" }}
                   >
                     <p className="font-semibold text-gray-700 whitespace-nowrap">
-                      Kang Chiao brings me the world
+                      Kang Chiao Brings Me the World
                     </p>
                   </div>
                 </div>
