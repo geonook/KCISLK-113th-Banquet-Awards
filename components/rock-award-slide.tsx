@@ -118,7 +118,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
       </div>
 
       {showContent && (
-        <div className="relative z-10 w-[90%] max-w-[1400px] px-4 mx-auto animate-slide-up">
+        <div className="relative z-10 w-[85%] max-w-[1200px] px-4 mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.1s" }}>
             {/* 背景光暈 - 紫藍色主題 */}
             <div className="absolute inset-0 rounded-3xl blur-3xl scale-105 bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-indigo-400/20" />
@@ -150,7 +150,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
               </div>
 
               {/* 磐石獎佈局 - 增加間距25% */}
-              <div className="grid md:grid-cols-6 gap-10 items-center">
+              <div className="grid md:grid-cols-5 gap-10 items-center">
                 {/* 照片區域 - 更大 */}
                 <div
                   className="md:col-span-2 flex justify-center animate-slide-right"
@@ -162,13 +162,13 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
                     <div className="absolute -inset-4 rounded-full opacity-30 animate-spin-reverse bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300" />
 
                     {/* 照片框架 - 更大尺寸 +25% */}
-                    <div className="w-[30rem] h-[30rem] rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-purple-300 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-[35rem] h-[35rem] rounded-full overflow-hidden shadow-2xl relative z-10 border-6 border-purple-300 group-hover:scale-105 transition-transform duration-300">
                       {winner.photoUrl ? (
                         <Image
                           src={winner.photoUrl || "/placeholder.svg"}
                           alt={`${winner.recipientName} photo`}
-                          width={480}
-                          height={480}
+                          width={560}
+                          height={560}
                           className="object-cover w-full h-full"
                         />
                       ) : (
@@ -200,7 +200,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
                 </div>
 
                 {/* 磐石獎資訊 - 佔更多空間 */}
-                <div className="md:col-span-4 text-center md:text-left space-y-6">
+                <div className="md:col-span-3 text-center md:text-left space-y-6">
                   {/* 部門標籤 */}
                   <div
                     className="flex justify-center md:justify-start animate-slide-left"
@@ -233,7 +233,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
                     style={{
                       textShadow: "4px 4px 8px rgba(0,0,0,0.6), 0 0 30px rgba(255,255,255,0.2)",
                       animationDelay: "0.7s",
-                      whiteSpace: "nowrap", // 防止姓名分行
+                      whiteSpace: "pre-line", // 支持\n換行
                     }}
                   >
                     {formatLongName(winner.recipientName)}
