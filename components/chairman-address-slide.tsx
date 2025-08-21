@@ -107,7 +107,7 @@ export function ChairmanAddressSlide({
               <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 animate-spin-reverse" />
 
               {/* 標題區域 */}
-              <div className="mb-10 animate-slide-up" style={{ animationDelay: "1s" }}>
+              <div className="mb-16 animate-slide-up flex flex-col justify-center min-h-[400px]" style={{ animationDelay: "1s" }}>
                 {/* 主標題 */}
                 <h1
                   className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-none"
@@ -129,42 +129,11 @@ export function ChairmanAddressSlide({
               </div>
 
               {/* 裝飾線條 */}
-              <div className="relative mb-10 animate-slide-up" style={{ animationDelay: "1.4s" }}>
+              <div className="relative mb-20 animate-slide-up" style={{ animationDelay: "1.4s" }}>
                 <div className="h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto animate-expand" />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-yellow-300 to-white opacity-60 blur-sm animate-shimmer" />
               </div>
 
-              {/* 核心理念區域 */}
-              <div className="space-y-8 animate-slide-up" style={{ animationDelay: "1.6s" }}>
-                <p className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 hover:scale-105 transition-transform duration-200">
-                  Kang Chiao Brings Me the World
-                </p>
-
-                <div className="flex flex-wrap justify-center items-center gap-4 text-lg md:text-xl">
-                  <div
-                    className="px-6 py-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full border border-blue-200 shadow-md animate-slide-right"
-                    style={{ animationDelay: "1.8s" }}
-                  >
-                    <p className="font-semibold text-gray-700 whitespace-nowrap">
-                      領導卓越 成就未來
-                    </p>
-                  </div>
-
-                  <div
-                    className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-pulse"
-                    style={{ animationDelay: "2s" }}
-                  />
-
-                  <div
-                    className="px-6 py-3 bg-gradient-to-r from-orange-50 to-red-50 rounded-full border border-orange-200 shadow-md animate-slide-left"
-                    style={{ animationDelay: "2.2s" }}
-                  >
-                    <p className="font-semibold text-gray-700 whitespace-nowrap">
-                      Excellence in Leadership
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
