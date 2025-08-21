@@ -112,10 +112,10 @@ export function Service10YearTitleSlide({ isActive = true }: Service10YearTitleS
               <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-amber-400 via-orange-500 to-orange-600 rounded-full opacity-30 animate-spin-reverse" />
 
               {/* 標題區域 */}
-              <div className="mb-16 animate-slide-up flex flex-col justify-center min-h-[400px]" style={{ animationDelay: "1.2s" }}>
+              <div className="mb-16 animate-slide-up flex flex-col justify-center min-h-[500px] py-12" style={{ animationDelay: "1.2s" }}>
                 {/* 中文主標題 */}
                 <h1
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-tight"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-tight"
                   style={{
                     color: "white",
                     textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
@@ -127,7 +127,7 @@ export function Service10YearTitleSlide({ isActive = true }: Service10YearTitleS
 
                 {/* 英文副標題 */}
                 <h2
-                  className="text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-wide mb-6 animate-slide-up"
+                  className="text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-wide mb-12 animate-slide-up"
                   style={{ 
                     animationDelay: "1.4s",
                     textShadow: "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1)"
@@ -149,7 +149,7 @@ export function Service10YearTitleSlide({ isActive = true }: Service10YearTitleS
               </div>
 
               {/* 裝飾線條 */}
-              <div className="relative mb-20 animate-slide-up" style={{ animationDelay: "1.8s" }}>
+              <div className="relative mb-16 animate-slide-up" style={{ animationDelay: "1.8s" }}>
                 <div className="h-1 bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 mx-auto animate-expand" />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-orange-300 to-white opacity-60 blur-sm animate-shimmer" />
               </div>

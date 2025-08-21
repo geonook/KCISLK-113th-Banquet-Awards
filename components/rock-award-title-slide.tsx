@@ -112,10 +112,10 @@ export function RockAwardTitleSlide({ isActive = true }: RockAwardTitleSlideProp
               <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-indigo-500 via-blue-600 to-purple-700 rounded-full opacity-30 animate-spin-reverse" />
 
               {/* 標題區域 */}
-              <div className="mb-16 animate-slide-up flex flex-col justify-center min-h-[400px]" style={{ animationDelay: "1.2s" }}>
+              <div className="mb-16 animate-slide-up flex flex-col justify-center min-h-[500px] py-12" style={{ animationDelay: "1.2s" }}>
                 {/* 中文主標題 */}
                 <h1
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-tight"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-tight"
                   style={{
                     color: "white",
                     textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
@@ -127,7 +127,7 @@ export function RockAwardTitleSlide({ isActive = true }: RockAwardTitleSlideProp
 
                 {/* 英文副標題 */}
                 <h2
-                  className="text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-wide mb-6 animate-slide-up"
+                  className="text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-wide mb-12 animate-slide-up"
                   style={{ 
                     animationDelay: "1.4s",
                     textShadow: "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1)"
@@ -149,7 +149,7 @@ export function RockAwardTitleSlide({ isActive = true }: RockAwardTitleSlideProp
               </div>
 
               {/* 裝飾線條 */}
-              <div className="relative mb-20 animate-slide-up" style={{ animationDelay: "1.8s" }}>
+              <div className="relative mb-16 animate-slide-up" style={{ animationDelay: "1.8s" }}>
                 <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-700 mx-auto animate-expand" />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-blue-300 to-white opacity-60 blur-sm animate-shimmer" />
               </div>

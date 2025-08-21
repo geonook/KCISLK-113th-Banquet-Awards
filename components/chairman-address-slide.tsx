@@ -107,10 +107,10 @@ export function ChairmanAddressSlide({
               <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 animate-spin-reverse" />
 
               {/* 標題區域 */}
-              <div className="mb-16 animate-slide-up flex flex-col justify-center min-h-[400px]" style={{ animationDelay: "1s" }}>
+              <div className="mb-16 animate-slide-up flex flex-col justify-center min-h-[500px] py-12" style={{ animationDelay: "1s" }}>
                 {/* 主標題 */}
                 <h1
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-none"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-10 leading-none"
                   style={{
                     color: "white",
                     textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
@@ -129,7 +129,7 @@ export function ChairmanAddressSlide({
               </div>
 
               {/* 裝飾線條 */}
-              <div className="relative mb-20 animate-slide-up" style={{ animationDelay: "1.4s" }}>
+              <div className="relative mb-16 animate-slide-up" style={{ animationDelay: "1.4s" }}>
                 <div className="h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto animate-expand" />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-yellow-300 to-white opacity-60 blur-sm animate-shimmer" />
               </div>

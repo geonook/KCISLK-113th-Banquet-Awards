@@ -160,11 +160,11 @@ export function ThanksgivingMainSlide({
 
               {/* 餐會標題區域 */}
               <div className={`animate-slide-up flex flex-col justify-center ${
-                subtitle.includes('Toast') || subtitle.includes('Time') ? 'mb-16 min-h-[400px]' : 'mb-10'
+                subtitle.includes('Toast') || subtitle.includes('Time') ? 'mb-16 min-h-[500px] py-12' : 'mb-10'
               }`} style={{ animationDelay: "1s" }}>
                 {/* 主標題 */}
                 <h1
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-none"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-10 leading-none"
                   style={{
                     color: "white",
                     textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
@@ -185,7 +185,7 @@ export function ThanksgivingMainSlide({
 
               {/* 裝飾線條 */}
               <div className={`relative animate-slide-up ${
-                subtitle.includes('Toast') || subtitle.includes('Time') ? 'mb-20' : 'mb-10'
+                subtitle.includes('Toast') || subtitle.includes('Time') ? 'mb-16' : 'mb-10'
               }`} style={{ animationDelay: "1.6s" }}>
                 <div className="h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto animate-expand" />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-yellow-300 to-white opacity-60 blur-sm animate-shimmer" />
