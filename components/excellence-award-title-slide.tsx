@@ -97,7 +97,7 @@ export function ExcellenceAwardTitleSlide({ isActive = true }: ExcellenceAwardTi
 
       {/* 主要內容區域 */}
       {showContent && (
-        <div className="relative z-10 text-center px-6 w-[85%] max-w-[1200px] mx-auto animate-slide-up">
+        <div className="relative z-10 text-center px-6 w-[90%] max-w-[1400px] mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.8s" }}>
             {/* 背景光暈效果 */}
             <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 via-red-500/20 to-pink-500/20 rounded-3xl blur-3xl scale-110" />

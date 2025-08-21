@@ -200,7 +200,7 @@ export function PerformanceSlide({
 
       {/* 主要內容區域 */}
       {showContent && (
-        <div className="relative z-10 text-center px-6 w-[85%] max-w-[1200px] mx-auto animate-slide-up">
+        <div className="relative z-10 text-center px-6 w-[90%] max-w-[1400px] mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.8s" }}>
             {/* 背景光暈效果 - 表演主題色彩 */}
             <div 
