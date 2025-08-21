@@ -220,11 +220,11 @@ export function PerformanceSlide({
               <div className={`absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br ${config.gradientColors} rounded-full opacity-20 animate-spin-reverse`} />
 
 
-              {/* 標題區域 */}
-              <div className="mb-10 animate-slide-up" style={{ animationDelay: "1.2s" }}>
-                {/* 中文主標題 */}
+              {/* 標題區域 - 增加間距以維持字卡高度 */}
+              <div className="mb-20 animate-slide-up flex flex-col justify-center min-h-[400px]" style={{ animationDelay: "1.2s" }}>
+                {/* 中文主標題 - 增加下邊距 */}
                 <h1
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-tight"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-16 leading-tight"
                   style={{
                     color: "white",
                     textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
@@ -234,9 +234,9 @@ export function PerformanceSlide({
                   {config.title}
                 </h1>
 
-                {/* 英文副標題 */}
+                {/* 英文副標題 - 增加下邊距 */}
                 <h2
-                  className="text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-wide mb-6 animate-slide-up"
+                  className="text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-wide mb-16 animate-slide-up"
                   style={{ 
                     animationDelay: "1.4s",
                     textShadow: "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1)"
@@ -247,51 +247,10 @@ export function PerformanceSlide({
 
               </div>
 
-              {/* 裝飾線條 - 表演主題色彩 */}
-              <div className="relative mb-10 animate-slide-up" style={{ animationDelay: "1.8s" }}>
+              {/* 裝飾線條 - 表演主題色彩，增加間距 */}
+              <div className="relative mb-20 animate-slide-up" style={{ animationDelay: "1.8s" }}>
                 <div className={`h-1 bg-gradient-to-r ${config.gradientColors} mx-auto animate-expand`} />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-yellow-300 to-white opacity-60 blur-sm animate-shimmer" />
-              </div>
-
-              {/* 表演特色描述 */}
-              <div className="space-y-6 animate-slide-up" style={{ animationDelay: "2s" }}>
-                <div className="flex flex-wrap justify-center items-center gap-6 text-lg md:text-xl">
-                  <div
-                    className="px-8 py-4 bg-gradient-to-r from-blue-50 to-purple-100 rounded-full border border-blue-200 shadow-lg animate-slide-right hover:scale-105 transition-transform"
-                    style={{ animationDelay: "2.2s" }}
-                  >
-                    <p className="font-semibold text-gray-700 whitespace-nowrap">
-                      🎭 精彩演出 Amazing Performance
-                    </p>
-                  </div>
-
-                  <div
-                    className={`w-4 h-4 bg-gradient-to-r ${config.gradientColors} rounded-full animate-pulse`}
-                    style={{ animationDelay: "2.4s" }}
-                  />
-
-                  <div
-                    className="px-8 py-4 bg-gradient-to-r from-orange-50 to-red-100 rounded-full border border-orange-200 shadow-lg animate-slide-left hover:scale-105 transition-transform"
-                    style={{ animationDelay: "2.6s" }}
-                  >
-                    <p className="font-semibold text-gray-700 whitespace-nowrap">
-                      ✨ 文化交融 Cultural Fusion
-                    </p>
-                  </div>
-                </div>
-
-                {/* 觀賞提示 - 放大25% */}
-                <div
-                  className="mt-10 p-8 bg-gradient-to-r from-white/80 to-gray-50/80 bg-white/40 rounded-2xl border border-gray-200 shadow-inner animate-slide-up"
-                  style={{ animationDelay: "2.8s" }}
-                >
-                  <p className="text-xl font-medium text-gray-800 mb-3" style={{textShadow: "1px 1px 2px rgba(255,255,255,0.8)"}}>
-                    🎬 請欣賞精彩表演 / Please Enjoy the Performance
-                  </p>
-                  <p className="text-lg text-gray-700" style={{textShadow: "1px 1px 2px rgba(255,255,255,0.8)"}}>
-                    讓我們一起感受藝術的魅力 / Let's feel the charm of art together
-                  </p>
-                </div>
               </div>
             </div>
           </div>
