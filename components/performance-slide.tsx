@@ -200,7 +200,7 @@ export function PerformanceSlide({
 
       {/* 主要內容區域 */}
       {showContent && (
-        <div className="relative z-10 text-center px-6 w-[90%] max-w-[1400px] mx-auto animate-slide-up">
+        <div className="relative z-10 text-center px-6 w-[85%] max-w-[1200px] mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.8s" }}>
             {/* 背景光暈效果 - 表演主題色彩 */}
             <div 
@@ -211,7 +211,7 @@ export function PerformanceSlide({
             />
 
             {/* 主卡片 */}
-            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-white/30 overflow-hidden">
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30 overflow-hidden">
               {/* 裝飾性幾何元素 - 表演主題色彩 */}
               <div className={`absolute top-0 left-0 w-full h-2 bg-gradient-to-r ${config.gradientColors}`} />
 
@@ -221,10 +221,10 @@ export function PerformanceSlide({
 
 
               {/* 標題區域 - 增加間距以維持字卡高度 */}
-              <div className="mb-20 animate-slide-up flex flex-col justify-center min-h-[400px]" style={{ animationDelay: "1.2s" }}>
+              <div className="mb-12 animate-slide-up flex flex-col justify-center min-h-[350px] py-8" style={{ animationDelay: "1.2s" }}>
                 {/* 中文主標題 - 增加下邊距 */}
                 <h1
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-16 leading-tight"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-tight"
                   style={{
                     color: "white",
                     textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
@@ -236,7 +236,7 @@ export function PerformanceSlide({
 
                 {/* 英文副標題 - 增加下邊距 */}
                 <h2
-                  className="text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-wide mb-16 animate-slide-up"
+                  className="text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-wide mb-12 animate-slide-up"
                   style={{ 
                     animationDelay: "1.4s",
                     textShadow: "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1)"
@@ -248,7 +248,7 @@ export function PerformanceSlide({
               </div>
 
               {/* 裝飾線條 - 表演主題色彩，增加間距 */}
-              <div className="relative mb-20 animate-slide-up" style={{ animationDelay: "1.8s" }}>
+              <div className="relative mb-8 animate-slide-up" style={{ animationDelay: "1.8s" }}>
                 <div className={`h-1 bg-gradient-to-r ${config.gradientColors} mx-auto animate-expand`} />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-yellow-300 to-white opacity-60 blur-sm animate-shimmer" />
               </div>
