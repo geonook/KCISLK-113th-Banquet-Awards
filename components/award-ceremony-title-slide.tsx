@@ -115,7 +115,7 @@ export function AwardCeremonyTitleSlide({ title, subtitle, isActive = true }: Aw
 
       {/* 主要內容區域 */}
       {showContent && (
-        <div className="relative z-10 text-center px-6 w-[80%] max-w-[1000px] mx-auto animate-slide-up">
+        <div className="relative z-10 text-center px-6 w-[85%] max-w-[1200px] mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.8s" }}>
             {/* 背景光暈效果 - 彩虹光暈 */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-pink-400/20 via-red-400/20 via-orange-400/20 via-yellow-400/20 via-green-400/20 via-blue-400/20 to-indigo-400/20 rounded-3xl blur-3xl scale-110" />
