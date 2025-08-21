@@ -245,16 +245,6 @@ export function PerformanceSlide({
                   {config.englishTitle}
                 </h2>
 
-                {/* 表演描述 */}
-                <p
-                  className="text-lg md:text-xl text-white font-medium animate-slide-up"
-                  style={{ 
-                    animationDelay: "1.6s",
-                    textShadow: "2px 2px 6px rgba(0,0,0,0.7), 0 0 15px rgba(255,255,255,0.1)"
-                  }}
-                >
-                  {config.description}
-                </p>
               </div>
 
               {/* 裝飾線條 - 表演主題色彩 */}
