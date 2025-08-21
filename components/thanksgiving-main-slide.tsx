@@ -144,13 +144,13 @@ export function ThanksgivingMainSlide({
 
       {/* 主要內容區域 */}
       {showContent && (
-        <div className="relative z-10 text-center px-6 w-[90%] max-w-[1400px] mx-auto animate-slide-up">
+        <div className="relative z-10 text-center px-6 w-[80%] max-w-[1000px] mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.8s" }}>
             {/* 背景光暈效果 */}
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 via-orange-400/20 to-red-400/20 rounded-3xl blur-3xl scale-110" />
 
             {/* 主卡片 */}
-            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-14 shadow-2xl border border-white/30 overflow-hidden">
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30 overflow-hidden">
               {/* 裝飾性幾何元素 */}
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 via-orange-500 via-red-500 to-purple-500" />
 
@@ -160,7 +160,7 @@ export function ThanksgivingMainSlide({
 
               {/* 餐會標題區域 */}
               <div className={`animate-slide-up flex flex-col justify-center ${
-                subtitle.includes('Toast') || subtitle.includes('Time') ? 'mb-16 min-h-[500px] py-12' : 'mb-10'
+                subtitle.includes('Toast') || subtitle.includes('Time') ? 'mb-12 min-h-[350px] py-8' : 'mb-10'
               }`} style={{ animationDelay: "1s" }}>
                 {/* 主標題 */}
                 <h1
@@ -185,7 +185,7 @@ export function ThanksgivingMainSlide({
 
               {/* 裝飾線條 */}
               <div className={`relative animate-slide-up ${
-                subtitle.includes('Toast') || subtitle.includes('Time') ? 'mb-16' : 'mb-10'
+                subtitle.includes('Toast') || subtitle.includes('Time') ? 'mb-8' : 'mb-10'
               }`} style={{ animationDelay: "1.6s" }}>
                 <div className="h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto animate-expand" />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-yellow-300 to-white opacity-60 blur-sm animate-shimmer" />

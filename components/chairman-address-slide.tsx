@@ -92,13 +92,13 @@ export function ChairmanAddressSlide({
 
       {/* 主要內容區域 */}
       {showContent && (
-        <div className="relative z-10 text-center px-6 w-[90%] max-w-[1400px] mx-auto animate-slide-up">
+        <div className="relative z-10 text-center px-6 w-[80%] max-w-[1000px] mx-auto animate-slide-up">
           <div className="relative animate-scale-in" style={{ animationDelay: "0.8s" }}>
             {/* 背景光暈效果 */}
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 via-orange-400/20 to-red-400/20 rounded-3xl blur-3xl scale-110" />
 
             {/* 主卡片 */}
-            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-14 shadow-2xl border border-white/30 overflow-hidden">
+            <div className="relative bg-white/25 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30 overflow-hidden">
               {/* 裝飾性幾何元素 */}
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 via-orange-500 via-red-500 to-purple-500" />
 
@@ -107,7 +107,7 @@ export function ChairmanAddressSlide({
               <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 animate-spin-reverse" />
 
               {/* 標題區域 */}
-              <div className="mb-16 animate-slide-up flex flex-col justify-center min-h-[500px] py-12" style={{ animationDelay: "1s" }}>
+              <div className="mb-12 animate-slide-up flex flex-col justify-center min-h-[350px] py-8" style={{ animationDelay: "1s" }}>
                 {/* 主標題 */}
                 <h1
                   className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-10 leading-none"
@@ -129,7 +129,7 @@ export function ChairmanAddressSlide({
               </div>
 
               {/* 裝飾線條 */}
-              <div className="relative mb-16 animate-slide-up" style={{ animationDelay: "1.4s" }}>
+              <div className="relative mb-8 animate-slide-up" style={{ animationDelay: "1.4s" }}>
                 <div className="h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto animate-expand" />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-yellow-300 to-white opacity-60 blur-sm animate-shimmer" />
               </div>
