@@ -112,7 +112,7 @@ export function Service25YearTitleSlide({ isActive = true }: Service25YearTitleS
               <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-600 rounded-full opacity-30 animate-spin-reverse" />
 
               {/* 標題區域 */}
-              <div className="mb-10 animate-slide-up" style={{ animationDelay: "1.2s" }}>
+              <div className="mb-16 animate-slide-up flex flex-col justify-center min-h-[400px]" style={{ animationDelay: "1.2s" }}>
                 {/* 中文主標題 */}
                 <h1
                   className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-tight"
@@ -149,51 +149,11 @@ export function Service25YearTitleSlide({ isActive = true }: Service25YearTitleS
               </div>
 
               {/* 裝飾線條 */}
-              <div className="relative mb-10 animate-slide-up" style={{ animationDelay: "1.8s" }}>
+              <div className="relative mb-20 animate-slide-up" style={{ animationDelay: "1.8s" }}>
                 <div className="h-1 bg-gradient-to-r from-yellow-400 via-orange-500 to-amber-600 mx-auto animate-expand" />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-yellow-300 to-white opacity-60 blur-sm animate-shimmer" />
               </div>
 
-              {/* 特色描述 */}
-              <div className="space-y-6 animate-slide-up" style={{ animationDelay: "2s" }}>
-                <div className="flex flex-wrap justify-center items-center gap-6 text-lg md:text-xl">
-                  <div
-                    className="px-8 py-4 bg-gradient-to-r from-yellow-50 to-orange-100 rounded-full border border-yellow-200 shadow-lg animate-slide-right hover:scale-105 transition-transform"
-                    style={{ animationDelay: "2.2s" }}
-                  >
-                    <p className="font-semibold text-gray-700 whitespace-nowrap">
-                      🏆 25年服務 25 Years Service
-                    </p>
-                  </div>
-
-                  <div
-                    className="w-4 h-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-amber-600 rounded-full animate-pulse"
-                    style={{ animationDelay: "2.4s" }}
-                  />
-
-                  <div
-                    className="px-8 py-4 bg-gradient-to-r from-orange-50 to-amber-100 rounded-full border border-orange-200 shadow-lg animate-slide-left hover:scale-105 transition-transform"
-                    style={{ animationDelay: "2.6s" }}
-                  >
-                    <p className="font-semibold text-gray-700 whitespace-nowrap">
-                      ⭐ 資深貢獻 Senior Contribution
-                    </p>
-                  </div>
-                </div>
-
-                {/* 榮譽說明 */}
-                <div
-                  className="mt-10 p-8 bg-gradient-to-r from-white/80 to-yellow-50/80 rounded-2xl border border-yellow-200 shadow-inner animate-slide-up"
-                  style={{ animationDelay: "2.8s" }}
-                >
-                  <p className="text-xl font-medium text-gray-800 mb-3" style={{textShadow: "1px 1px 2px rgba(255,255,255,0.8)"}}>
-                    🎖️ 表彰25年資深服務 / Honoring 25 Years of Dedicated Service
-                  </p>
-                  <p className="text-lg text-gray-700" style={{textShadow: "1px 1px 2px rgba(255,255,255,0.8)"}}>
-                    感謝您的長期貢獻與無私奉獻 / Thank you for your long-term contribution and selfless dedication
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

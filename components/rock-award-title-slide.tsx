@@ -112,7 +112,7 @@ export function RockAwardTitleSlide({ isActive = true }: RockAwardTitleSlideProp
               <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-indigo-500 via-blue-600 to-purple-700 rounded-full opacity-30 animate-spin-reverse" />
 
               {/* 標題區域 */}
-              <div className="mb-10 animate-slide-up" style={{ animationDelay: "1.2s" }}>
+              <div className="mb-16 animate-slide-up flex flex-col justify-center min-h-[400px]" style={{ animationDelay: "1.2s" }}>
                 {/* 中文主標題 */}
                 <h1
                   className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-tight"
@@ -149,51 +149,11 @@ export function RockAwardTitleSlide({ isActive = true }: RockAwardTitleSlideProp
               </div>
 
               {/* 裝飾線條 */}
-              <div className="relative mb-10 animate-slide-up" style={{ animationDelay: "1.8s" }}>
+              <div className="relative mb-20 animate-slide-up" style={{ animationDelay: "1.8s" }}>
                 <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-700 mx-auto animate-expand" />
                 <div className="absolute top-0 left-1/2 w-20 h-1 bg-gradient-to-r from-white via-blue-300 to-white opacity-60 blur-sm animate-shimmer" />
               </div>
 
-              {/* 特色描述 */}
-              <div className="space-y-6 animate-slide-up" style={{ animationDelay: "2s" }}>
-                <div className="flex flex-wrap justify-center items-center gap-6 text-lg md:text-xl">
-                  <div
-                    className="px-8 py-4 bg-gradient-to-r from-blue-50 to-purple-100 rounded-full border border-blue-200 shadow-lg animate-slide-right hover:scale-105 transition-transform"
-                    style={{ animationDelay: "2.2s" }}
-                  >
-                    <p className="font-semibold text-gray-700 whitespace-nowrap">
-                      💎 磐石精神 Rock Spirit
-                    </p>
-                  </div>
-
-                  <div
-                    className="w-4 h-4 bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-700 rounded-full animate-pulse"
-                    style={{ animationDelay: "2.4s" }}
-                  />
-
-                  <div
-                    className="px-8 py-4 bg-gradient-to-r from-purple-50 to-indigo-100 rounded-full border border-purple-200 shadow-lg animate-slide-left hover:scale-105 transition-transform"
-                    style={{ animationDelay: "2.6s" }}
-                  >
-                    <p className="font-semibold text-gray-700 whitespace-nowrap">
-                      🏔️ 穩固基石 Solid Foundation
-                    </p>
-                  </div>
-                </div>
-
-                {/* 榮譽說明 */}
-                <div
-                  className="mt-10 p-8 bg-gradient-to-r from-white/80 to-blue-50/80 rounded-2xl border border-blue-200 shadow-inner animate-slide-up"
-                  style={{ animationDelay: "2.8s" }}
-                >
-                  <p className="text-xl font-medium text-gray-800 mb-3" style={{textShadow: "1px 1px 2px rgba(255,255,255,0.8)"}}>
-                    💎 表彰專業典範與磐石精神 / Honoring Professional Excellence & Rock Foundation Spirit
-                  </p>
-                  <p className="text-lg text-gray-700" style={{textShadow: "1px 1px 2px rgba(255,255,255,0.8)"}}>
-                    感謝您如磐石般堅實的專業貢獻 / Thank you for your rock-solid professional contributions
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
