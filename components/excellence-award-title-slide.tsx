@@ -144,7 +144,7 @@ export function ExcellenceAwardTitleSlide({ isActive = true }: ExcellenceAwardTi
                     textShadow: "2px 2px 6px rgba(0,0,0,0.7), 0 0 15px rgba(255,255,255,0.1)"
                   }}
                 >
-                  卓越表現，優質服務 / Outstanding Performance, Quality Service
+                  卓越表現，優質服務 / Outstanding Performance, Quality Exceptional
                 </p>
               </div>
 
