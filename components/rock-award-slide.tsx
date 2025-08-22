@@ -261,7 +261,7 @@ export function RockAwardSlide({ winner, isActive }: RockAwardSlideProps) {
 
                   {/* 具體事蹟內容 - 增強可讀性 */}
                   <div
-                    className="text-gray-800 leading-relaxed whitespace-pre-line relative z-10 text-xl animate-fade-in"
+                    className="text-gray-800 leading-relaxed whitespace-pre-line relative z-10 text-2xl animate-fade-in"
                     style={{ 
                       animationDelay: "1s",
                       textShadow: "1px 1px 3px rgba(255,255,255,0.8)"

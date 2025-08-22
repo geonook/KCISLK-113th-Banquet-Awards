@@ -133,7 +133,7 @@ export function Service10YearTitleSlide({ isActive = true }: Service10YearTitleS
                     textShadow: "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1)"
                   }}
                 >
-                  10-Year Service Award
+                  10 Years of Service Award
                 </h2>
 
                 {/* 描述文字 */}

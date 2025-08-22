@@ -121,7 +121,7 @@ export function ChairmanAddressSlide({
                 </h1>
 
                 <p
-                  className="text-2xl md:text-3xl lg:text-4xl text-gray-700 font-semibold tracking-wide animate-slide-up"
+                  className="text-2xl md:text-3xl lg:text-4xl text-white font-semibold tracking-wide animate-slide-up"
                   style={{ animationDelay: "1.2s" }}
                 >
                   Chairman's Address

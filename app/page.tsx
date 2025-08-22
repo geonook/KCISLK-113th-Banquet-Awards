@@ -54,8 +54,8 @@ export default function AwardPresentation() {
   const [showPhotoPanel, setShowPhotoPanel] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   
-  // 部署測試標記 - v2024.8.20.2
-  const deployVersion = "v2024.8.20.2"
+  // 總彩版本標記 - 正式演出用版本
+  const deployVersion = "總彩版本-v1.0.0"
   
   // 獎項智能分組
   const getAwardGroups = () => {
@@ -289,10 +289,12 @@ export default function AwardPresentation() {
           case 1: targetSlide = 0; break  // 主頁
           case 2: targetSlide = 1; break  // 小提琴表演
           case 3: targetSlide = 2; break  // 董事長致詞
-          case 4: targetSlide = 4; break  // 上半場頒獎
-          case 5: targetSlide = slideConfigs.findIndex(c => c.type === 'choir-performance'); break // 合唱
-          case 6: targetSlide = slideConfigs.findIndex(c => c.type === 'second-half-title'); break // 下半場頒獎
-          case 7: targetSlide = slideConfigs.findIndex(c => c.type === 'dance-performance'); break // 舞蹈
+          case 4: targetSlide = slideConfigs.findIndex(c => c.type === 'toast-main'); break // 全體敬酒
+          case 5: targetSlide = slideConfigs.findIndex(c => c.type === 'first-half-title'); break // 上半場頒獎
+          case 6: targetSlide = slideConfigs.findIndex(c => c.type === 'choir-performance'); break // 合唱
+          case 7: targetSlide = slideConfigs.findIndex(c => c.type === 'second-half-title'); break // 下半場頒獎
+          case 8: targetSlide = slideConfigs.findIndex(c => c.type === 'dance-performance'); break // 舞蹈
+          case 9: targetSlide = slideConfigs.findIndex(c => c.type === 'celebration-main'); break // 歡敬時間
         }
         if (targetSlide >= 0 && targetSlide < totalSlides) {
           setCurrentSlide(targetSlide)

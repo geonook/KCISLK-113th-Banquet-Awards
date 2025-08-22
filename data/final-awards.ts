@@ -63,7 +63,7 @@ export const finalAwardData: AwardData = {
       photoUrl: "https://minio-hic.zeabur.app/award-photos/0e063767-b747-4946-8711-4fda856fbd0a.jpg",
       department: "中學國際處",
       awardType: "10 Years of Service Award",
-      recipientName: "Mitchell David James",
+      recipientName: "David James Mitchell",
       achievements: "",
     },
     {

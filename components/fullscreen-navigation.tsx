@@ -178,7 +178,7 @@ export function FullscreenNavigation({
           isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
         }`}
       >
-← → 翻頁 • 獎項跳轉 • F 全螢幕 • P 照片管理
+← → 翻頁 • 1:主頁 2:小提琴 3:致詞 4:敬酒 5:上半場 6:合唱 7:下半場 8:舞蹈 9:歡敬 • F 全螢幕 • P 照片
       </div>
     </div>
   )

@@ -76,7 +76,7 @@ export function RockAwardTitleSlide({ isActive = true }: RockAwardTitleSlideProp
                 className="text-xl font-bold tracking-wider text-white drop-shadow-lg"
                 style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
               >
-                磐石精神 Rock Foundation
+                磐石精神 Excellence Leadership
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ export function RockAwardTitleSlide({ isActive = true }: RockAwardTitleSlideProp
                     textShadow: "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1)"
                   }}
                 >
-                  Rock Foundation Award
+                  Excellent Leadership Award
                 </h2>
 
                 {/* 描述文字 */}

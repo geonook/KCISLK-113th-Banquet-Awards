@@ -23,7 +23,7 @@ const performanceConfig = {
   },
   choir: {
     title: "小學國際處中外師合唱",
-    englishTitle: "Elementary International Division Choir",
+    englishTitle: "Elementary School International Department Sextet",
     description: "串場表演 / Intermission Performance",
     icon: "🎵",
     gradientColors: "from-blue-400 via-cyan-500 to-teal-500",
@@ -41,6 +41,14 @@ const performanceConfig = {
     accentColor: "orange",
     lightColor: "rgba(245, 158, 11, 0.3)"
   }
+}
+
+// 智能標題字體大小系統 - 根據標題長度自動調整
+const getTitleFontSize = (title: string): string => {
+  const length = title.length
+  if (length <= 6) return "text-5xl md:text-6xl lg:text-7xl xl:text-8xl"      // 短標題：最大字體
+  if (length <= 14) return "text-4xl md:text-5xl lg:text-6xl xl:text-7xl"     // 中等標題：大字體
+  return "text-3xl md:text-4xl lg:text-5xl xl:text-6xl"                       // 長標題：適中字體
 }
 
 export function PerformanceSlide({ 
@@ -224,7 +232,7 @@ export function PerformanceSlide({
               <div className="mb-12 animate-slide-up flex flex-col justify-center min-h-[350px] py-8" style={{ animationDelay: "1.2s" }}>
                 {/* 中文主標題 - 增加下邊距 */}
                 <h1
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-tight"
+                  className={`${getTitleFontSize(config.title)} font-black mb-8 leading-tight whitespace-nowrap`}
                   style={{
                     color: "white",
                     textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",

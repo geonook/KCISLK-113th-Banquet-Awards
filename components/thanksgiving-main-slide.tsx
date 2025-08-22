@@ -175,7 +175,7 @@ export function ThanksgivingMainSlide({
                 </h1>
 
                 <p
-                  className="text-2xl md:text-3xl lg:text-4xl text-gray-700 font-semibold tracking-wide animate-slide-up mb-6"
+                  className="text-2xl md:text-3xl lg:text-4xl text-white font-semibold tracking-wide animate-slide-up mb-6"
                   style={{ animationDelay: "1.2s" }}
                 >
                   {subtitle}
@@ -218,7 +218,7 @@ export function ThanksgivingMainSlide({
                       style={{ animationDelay: "2.4s" }}
                     >
                       <p className="font-semibold text-gray-700 whitespace-nowrap">
-                        Building connections, shaping futures
+                        Building Connections, Shaping Futures
                       </p>
                     </div>
                   </div>
