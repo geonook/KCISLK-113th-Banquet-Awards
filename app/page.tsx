@@ -148,13 +148,13 @@ export default function AwardPresentation() {
         configs.push({ type: 'excellence-award-title' })
       }
       
-      configs.push({ type: 'second-half-award', winnerIndex: index })
-      
       // 在許友欽(優質獎, index: 24)之前插入優質獎標題頁  
       // 許友欽是id:38, 在secondHalf中的index是24 (38-13-1=24)
       if (index === 24) {
         configs.push({ type: 'excellence-award-title' })
       }
+      
+      configs.push({ type: 'second-half-award', winnerIndex: index })
       
       // 在周俊逸(優質獎最後一位, index: 36)之後插入優質獎標題頁
       // 周俊逸是id:50, 在secondHalf中的index是36 (50-13-1=36)
