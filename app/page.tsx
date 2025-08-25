@@ -55,7 +55,7 @@ export default function AwardPresentation() {
   const [isLoading, setIsLoading] = useState(true)
   
   // 活動最終版標記 - 正式活動演出版本
-  const deployVersion = "活動最終版-v2.0.0"
+  const deployVersion = "活動最終版-v2.0.0-Final"
   
   // 獎項智能分組
   const getAwardGroups = () => {
