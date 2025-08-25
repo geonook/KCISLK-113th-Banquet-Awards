@@ -1,7 +1,7 @@
 # CLAUDE.md - Award Presentation Template
 
-> **Documentation Version**: 1.0  
-> **Last Updated**: 2025-08-15  
+> **Documentation Version**: 2.0  
+> **Last Updated**: 2025-08-25  
 > **Project**: Award Presentation Template  
 > **Description**: Next.js 獎項展示系統，具備 MinIO 雲端照片管理、照片編輯、全域持久化功能
 > **Features**: GitHub auto-backup, Task agents, technical debt prevention, MinIO integration

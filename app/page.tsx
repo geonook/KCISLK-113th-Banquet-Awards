@@ -54,8 +54,8 @@ export default function AwardPresentation() {
   const [showPhotoPanel, setShowPhotoPanel] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   
-  // 總彩排最終版標記 - 總彩排前最後確定版本
-  const deployVersion = "總彩排最終版-v1.0.1"
+  // 活動最終版標記 - 正式活動演出版本
+  const deployVersion = "活動最終版-v2.0.0"
   
   // 獎項智能分組
   const getAwardGroups = () => {
