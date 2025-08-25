@@ -175,8 +175,11 @@ export function ThanksgivingMainSlide({
                 </h1>
 
                 <p
-                  className="text-2xl md:text-3xl lg:text-4xl text-white font-semibold tracking-wide animate-slide-up mb-6"
-                  style={{ animationDelay: "1.2s" }}
+                  className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white font-semibold tracking-wide mb-12 animate-slide-up"
+                  style={{ 
+                    animationDelay: "1.2s",
+                    textShadow: "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1)"
+                  }}
                 >
                   {subtitle}
                 </p>
