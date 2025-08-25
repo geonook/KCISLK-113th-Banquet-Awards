@@ -32,7 +32,7 @@ const performanceConfig = {
     lightColor: "rgba(59, 130, 246, 0.3)"
   },
   dance: {
-    title: "幼兒園中外師多元文化舞蹈表演",
+    title: "幼兒園中外師\n多元文化舞蹈表演",
     englishTitle: "Kindergarten Multicultural Dance Performance",
     description: "串場表演 / Intermission Performance",
     icon: "💃",
@@ -43,13 +43,7 @@ const performanceConfig = {
   }
 }
 
-// 智能標題字體大小系統 - 根據標題長度自動調整
-const getTitleFontSize = (title: string): string => {
-  const length = title.length
-  if (length <= 6) return "text-5xl md:text-6xl lg:text-7xl xl:text-8xl"      // 短標題：最大字體
-  if (length <= 14) return "text-4xl md:text-5xl lg:text-6xl xl:text-7xl"     // 中等標題：大字體
-  return "text-3xl md:text-4xl lg:text-5xl xl:text-6xl"                       // 長標題：適中字體
-}
+// 統一標題字體大小 - 所有表演標題使用相同尺寸以保持一致性
 
 export function PerformanceSlide({ 
   performanceType, 
@@ -230,16 +224,18 @@ export function PerformanceSlide({
 
               {/* 標題區域 - 增加間距以維持字卡高度 */}
               <div className="mb-12 animate-slide-up flex flex-col justify-center min-h-[350px] py-8" style={{ animationDelay: "1.2s" }}>
-                {/* 中文主標題 - 增加下邊距 */}
+                {/* 中文主標題 - 統一字體大小，支援換行 */}
                 <h1
-                  className={`${getTitleFontSize(config.title)} font-black mb-8 leading-tight whitespace-nowrap`}
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-tight"
                   style={{
                     color: "white",
                     textShadow: "4px 4px 12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
                     filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.4))",
                   }}
                 >
-                  {config.title}
+                  {config.title.split('\n').map((line, index) => (
+                    <div key={index}>{line}</div>
+                  ))}
                 </h1>
 
                 {/* 英文副標題 - 增加下邊距 */}
