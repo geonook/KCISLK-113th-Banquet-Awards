@@ -228,7 +228,7 @@ export function AwardsTitleSlide({ phase, isActive = true, awardCounts }: Awards
 
                 {/* 英文副標題 */}
                 <p
-                  className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-semibold tracking-wide mb-4 animate-slide-up"
+                  className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-700 font-semibold tracking-wide mb-4 animate-slide-up"
                   style={{ animationDelay: "1.2s" }}
                 >
                   {config.subtitle}
