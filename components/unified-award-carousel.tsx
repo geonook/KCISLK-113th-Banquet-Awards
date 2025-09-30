@@ -40,12 +40,12 @@ export function UnifiedAwardCarousel({
 
   const totalItems = carouselItems.length
 
-  // 設定 Embla Carousel with smooth animations
+  // 設定 Embla Carousel with dramatic 3D animations
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
     skipSnaps: false,
-    duration: 30,
+    duration: 50, // 增加過渡時間以配合浮誇動畫
     dragFree: false,
     containScroll: "trimSnaps",
   })
@@ -66,13 +66,13 @@ export function UnifiedAwardCarousel({
     }
   }, [emblaApi])
 
-  // 自動播放功能（標題頁停留 3 秒，得獎者停留設定時間）
+  // 自動播放功能（標題頁停留 5 秒，得獎者停留設定時間）
   useEffect(() => {
     if (!emblaApi || isPaused) return
 
     const currentItem = carouselItems[currentIndex]
     const delay = (currentItem.type === 'rock-title' || currentItem.type === 'excellence-title')
-      ? 3000 // 標題頁停留 3 秒
+      ? 5000 // 標題頁停留 5 秒（增加 2 秒）
       : autoplayDelay // 得獎者停留設定時間
 
     const autoplay = setTimeout(() => {
@@ -168,23 +168,37 @@ export function UnifiedAwardCarousel({
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
-      {/* Embla Carousel Container with smooth transitions */}
-      <div className="embla h-full" ref={emblaRef}>
-        <div className="embla__container h-full flex transition-transform duration-700 ease-out">
-          {carouselItems.map((item, index) => (
-            <div
-              key={index}
-              className="embla__slide flex-[0_0_100%] min-w-0 relative"
-              style={{
-                opacity: index === currentIndex ? 1 : 0.3,
-                transition: 'opacity 0.7s ease-in-out',
-              }}
-            >
-              <div className="w-full h-full transform transition-all duration-700 ease-out">
-                {renderSlide(item)}
+      {/* Embla Carousel Container with dramatic 3D transitions */}
+      <div className="embla h-full" ref={emblaRef} style={{ perspective: '1500px' }}>
+        <div className="embla__container h-full flex">
+          {carouselItems.map((item, index) => {
+            const isActive = index === currentIndex
+            const isPrev = index === (currentIndex - 1 + totalItems) % totalItems
+            const isNext = index === (currentIndex + 1) % totalItems
+
+            return (
+              <div
+                key={index}
+                className="embla__slide flex-[0_0_100%] min-w-0 relative"
+                style={{
+                  animation: isActive
+                    ? 'carousel-dramatic-enter 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
+                    : isPrev || isNext
+                    ? 'carousel-dramatic-exit 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
+                    : 'none',
+                  opacity: isActive ? 1 : 0,
+                  transformStyle: 'preserve-3d',
+                }}
+              >
+                <div className="w-full h-full" style={{
+                  transformStyle: 'preserve-3d',
+                  backfaceVisibility: 'hidden',
+                }}>
+                  {renderSlide(item)}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
 

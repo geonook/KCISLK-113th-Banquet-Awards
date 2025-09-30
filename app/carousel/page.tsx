@@ -48,7 +48,7 @@ export default function CarouselPage() {
     <UnifiedAwardCarousel
       rockWinners={rockWinners}
       excellenceWinners={excellenceWinners}
-      autoplayDelay={5000}
+      autoplayDelay={7000}
     />
   )
 }

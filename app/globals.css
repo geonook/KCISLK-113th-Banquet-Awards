@@ -308,6 +308,45 @@
   }
 
   /* Smooth fade transition for carousel */
+  /* 浮誇的 3D 轉場動畫 - 進場效果 */
+  @keyframes carousel-dramatic-enter {
+    0% {
+      opacity: 0;
+      transform: perspective(1200px) rotateY(-25deg) scale(0.8) translateZ(-200px);
+      filter: blur(10px) brightness(0.3);
+    }
+    50% {
+      opacity: 0.5;
+      transform: perspective(1200px) rotateY(-8deg) scale(0.95) translateZ(-50px);
+      filter: blur(3px) brightness(0.7);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(1200px) rotateY(0deg) scale(1) translateZ(0);
+      filter: blur(0px) brightness(1);
+    }
+  }
+
+  /* 浮誇的 3D 轉場動畫 - 離場效果 */
+  @keyframes carousel-dramatic-exit {
+    0% {
+      opacity: 1;
+      transform: perspective(1200px) rotateY(0deg) scale(1) translateZ(0);
+      filter: blur(0px) brightness(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: perspective(1200px) rotateY(8deg) scale(0.95) translateZ(-50px);
+      filter: blur(3px) brightness(0.7);
+    }
+    100% {
+      opacity: 0;
+      transform: perspective(1200px) rotateY(25deg) scale(0.8) translateZ(-200px);
+      filter: blur(10px) brightness(0.3);
+    }
+  }
+
+  /* 保留原有簡單動畫作為備選 */
   @keyframes carousel-fade-in {
     from {
       opacity: 0;
