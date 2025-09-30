@@ -28,6 +28,7 @@ export function UnifiedAwardCarousel({
 }: UnifiedAwardCarouselProps) {
   const [isPaused, setIsPaused] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isFullscreen, setIsFullscreen] = useState(false)
 
   // 建立完整的輪播項目陣列
   const carouselItems: CarouselItem[] = [
@@ -96,6 +97,16 @@ export function UnifiedAwardCarousel({
     if (emblaApi) emblaApi.scrollNext()
   }, [emblaApi])
 
+  // 檢測全螢幕狀態
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement)
+    }
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange)
+    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange)
+  }, [])
+
   // 鍵盤控制
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -108,6 +119,20 @@ export function UnifiedAwardCarousel({
       } else if (e.key === "p" || e.key === "P") {
         e.preventDefault()
         toggleAutoplay()
+      } else if (e.key === "f" || e.key === "F") {
+        e.preventDefault()
+        // F 鍵切換全螢幕
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen()
+        } else {
+          document.exitFullscreen()
+        }
+      } else if (e.key === "Escape") {
+        // ESC 鍵離開全螢幕（由瀏覽器自動處理，但可添加額外邏輯）
+        if (document.fullscreenElement) {
+          e.preventDefault()
+          document.exitFullscreen()
+        }
       }
     }
 
@@ -216,25 +241,29 @@ export function UnifiedAwardCarousel({
         ))}
       </div>
 
-      {/* 鍵盤提示 */}
-      <div className="absolute top-8 right-8 z-40 bg-black/40 backdrop-blur-md px-4 py-3 rounded-lg border border-white/20 text-white text-sm opacity-60 hover:opacity-100 transition-opacity duration-300">
-        <div className="space-y-1">
-          <div><kbd className="px-2 py-1 bg-white/20 rounded">←</kbd> <kbd className="px-2 py-1 bg-white/20 rounded">→</kbd> 切換</div>
-          <div><kbd className="px-2 py-1 bg-white/20 rounded">P</kbd> 暫停/播放</div>
-          <div><kbd className="px-2 py-1 bg-white/20 rounded">ESC</kbd> 返回</div>
+      {/* 鍵盤提示 - 全螢幕時隱藏 */}
+      {!isFullscreen && (
+        <div className="absolute top-8 right-8 z-40 bg-black/40 backdrop-blur-md px-4 py-3 rounded-lg border border-white/20 text-white text-sm opacity-60 hover:opacity-100 transition-opacity duration-300">
+          <div className="space-y-1">
+            <div><kbd className="px-2 py-1 bg-white/20 rounded">←</kbd> <kbd className="px-2 py-1 bg-white/20 rounded">→</kbd> 切換</div>
+            <div><kbd className="px-2 py-1 bg-white/20 rounded">P</kbd> 暫停/播放</div>
+            <div><kbd className="px-2 py-1 bg-white/20 rounded">F</kbd> 全螢幕</div>
+          </div>
         </div>
-      </div>
+      )}
 
-      {/* 獎項類型標籤 - 動態顯示當前區塊 */}
-      <div className={`absolute top-8 left-8 z-40 px-6 py-3 rounded-full font-bold text-white shadow-xl border-2 border-white/30 text-xl bg-gradient-to-r ${currentSection.color} backdrop-blur-md transition-all duration-500`}>
-        <div className="flex items-center gap-3">
-          <span className="text-2xl">{currentSection.icon}</span>
-          <span>{currentSection.name}輪播</span>
-          <span className="text-sm opacity-80">
-            ({currentIndex + 1}/{totalItems})
-          </span>
+      {/* 獎項類型標籤 - 動態顯示當前區塊，全螢幕時隱藏 */}
+      {!isFullscreen && (
+        <div className={`absolute top-8 left-8 z-40 px-6 py-3 rounded-full font-bold text-white shadow-xl border-2 border-white/30 text-xl bg-gradient-to-r ${currentSection.color} backdrop-blur-md transition-all duration-500`}>
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">{currentSection.icon}</span>
+            <span>{currentSection.name}輪播</span>
+            <span className="text-sm opacity-80">
+              ({currentIndex + 1}/{totalItems})
+            </span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
