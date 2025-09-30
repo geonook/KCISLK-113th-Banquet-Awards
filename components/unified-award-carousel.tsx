@@ -180,11 +180,11 @@ export function UnifiedAwardCarousel({
                 className="embla__slide flex-[0_0_100%] min-w-0 relative"
                 style={{
                   animation: isActive
-                    ? 'carousel-dramatic-smooth-enter 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards'
-                    : 'carousel-dramatic-smooth-exit 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
+                    ? 'carousel-dramatic-smooth-enter 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                    : 'carousel-dramatic-smooth-exit 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                   opacity: isActive ? 1 : 0,
                   transformStyle: 'preserve-3d',
-                  willChange: 'transform, opacity, filter',
+                  willChange: 'transform, opacity',
                   pointerEvents: isActive ? 'auto' : 'none',
                 }}
               >
@@ -194,6 +194,7 @@ export function UnifiedAwardCarousel({
                     transformStyle: 'preserve-3d',
                     backfaceVisibility: 'hidden',
                     transform: 'translate3d(0, 0, 0)', // GPU 加速 hack
+                    contain: 'layout style paint', // 限制瀏覽器重繪範圍
                   }}
                 >
                   {renderSlide(item)}
