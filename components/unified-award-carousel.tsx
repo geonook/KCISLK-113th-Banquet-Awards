@@ -180,10 +180,9 @@ export function UnifiedAwardCarousel({
                 className="embla__slide flex-[0_0_100%] min-w-0 relative"
                 style={{
                   animation: isActive
-                    ? 'carousel-dramatic-smooth-enter 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards'
-                    : 'carousel-dramatic-smooth-exit 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    ? 'carousel-dramatic-smooth-enter 0.6s ease-out forwards'
+                    : 'carousel-dramatic-smooth-exit 0.6s ease-out forwards',
                   opacity: isActive ? 1 : 0,
-                  transformStyle: 'preserve-3d',
                   willChange: 'transform, opacity',
                   pointerEvents: isActive ? 'auto' : 'none',
                 }}
@@ -191,8 +190,6 @@ export function UnifiedAwardCarousel({
                 <div
                   className="w-full h-full"
                   style={{
-                    transformStyle: 'preserve-3d',
-                    backfaceVisibility: 'hidden',
                     transform: 'translate3d(0, 0, 0)', // GPU 加速 hack
                     contain: 'layout style paint', // 限制瀏覽器重繪範圍
                   }}
@@ -205,38 +202,48 @@ export function UnifiedAwardCarousel({
         </div>
       </div>
 
-      {/* 控制面板 */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 bg-black/60 backdrop-blur-md px-6 py-4 rounded-full border border-white/20 shadow-2xl">
+      {/* 控制面板 - 全螢幕時縮小 */}
+      <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center bg-black/60 backdrop-blur-md rounded-full border border-white/20 shadow-2xl transition-all duration-300 ${
+        isFullscreen
+          ? 'gap-2 px-3 py-2 scale-75 opacity-80 hover:opacity-100'
+          : 'gap-4 px-6 py-4'
+      }`}>
         {/* 上一張按鈕 */}
         <button
           onClick={scrollPrev}
-          className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
+          className={`rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+            isFullscreen ? 'w-8 h-8' : 'w-12 h-12'
+          }`}
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className={isFullscreen ? 'w-4 h-4' : 'w-6 h-6'} />
         </button>
 
         {/* 播放/暫停按鈕 */}
         <button
           onClick={toggleAutoplay}
-          className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
+          className={`rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+            isFullscreen ? 'w-8 h-8' : 'w-12 h-12'
+          }`}
           aria-label={isPaused ? "Play" : "Pause"}
         >
-          {isPaused ? <Play className="w-6 h-6" /> : <Pause className="w-6 h-6" />}
+          {isPaused ? <Play className={isFullscreen ? 'w-4 h-4' : 'w-6 h-6'} /> : <Pause className={isFullscreen ? 'w-4 h-4' : 'w-6 h-6'} />}
         </button>
 
         {/* 下一張按鈕 */}
         <button
           onClick={scrollNext}
-          className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
+          className={`rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+            isFullscreen ? 'w-8 h-8' : 'w-12 h-12'
+          }`}
           aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className={isFullscreen ? 'w-4 h-4' : 'w-6 h-6'} />
         </button>
 
         {/* 頁碼指示器 */}
-        <div className="ml-4 px-4 py-2 bg-white/10 rounded-full">
-          <span className="text-white font-bold text-sm">
+        <div className={`bg-white/10 rounded-full ${isFullscreen ? 'ml-2 px-2 py-1' : 'ml-4 px-4 py-2'}`}>
+          <span className={`text-white font-bold ${isFullscreen ? 'text-xs' : 'text-sm'}`}>
             {currentIndex + 1} / {totalItems}
           </span>
         </div>
