@@ -202,11 +202,11 @@ export function UnifiedAwardCarousel({
         </div>
       </div>
 
-      {/* 控制面板 - 全螢幕時縮小 */}
-      <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center bg-black/60 backdrop-blur-md rounded-full border border-white/20 shadow-2xl transition-all duration-300 ${
+      {/* 控制面板 - 全螢幕時縮小且透明化 */}
+      <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center rounded-full transition-all duration-300 ${
         isFullscreen
-          ? 'gap-2 px-3 py-2 scale-75 opacity-80 hover:opacity-100'
-          : 'gap-4 px-6 py-4'
+          ? 'gap-2 px-3 py-2 scale-75 opacity-30 hover:opacity-90 bg-black/20 backdrop-blur-sm border border-white/10 shadow-lg'
+          : 'gap-4 px-6 py-4 bg-black/60 backdrop-blur-md border border-white/20 shadow-2xl'
       }`}>
         {/* 上一張按鈕 */}
         <button
@@ -249,8 +249,10 @@ export function UnifiedAwardCarousel({
         </div>
       </div>
 
-      {/* 進度指示器 - 限制顯示數量避免過多 */}
-      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-40 flex gap-2 max-w-[80%] overflow-x-auto scrollbar-hide">
+      {/* 進度指示器 - 限制顯示數量避免過多，全螢幕時透明化 */}
+      <div className={`absolute bottom-24 left-1/2 -translate-x-1/2 z-40 flex gap-2 max-w-[80%] overflow-x-auto scrollbar-hide transition-opacity duration-300 ${
+        isFullscreen ? 'opacity-20 hover:opacity-60' : 'opacity-100'
+      }`}>
         {carouselItems.map((_, index) => (
           <button
             key={index}
