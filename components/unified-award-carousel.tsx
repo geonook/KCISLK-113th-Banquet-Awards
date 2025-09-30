@@ -66,13 +66,13 @@ export function UnifiedAwardCarousel({
     }
   }, [emblaApi])
 
-  // 自動播放功能（標題頁停留 5 秒，得獎者停留設定時間）
+  // 自動播放功能（標題頁停留 6 秒，得獎者停留設定時間）
   useEffect(() => {
     if (!emblaApi || isPaused) return
 
     const currentItem = carouselItems[currentIndex]
     const delay = (currentItem.type === 'rock-title' || currentItem.type === 'excellence-title')
-      ? 5000 // 標題頁停留 5 秒（增加 2 秒）
+      ? 6000 // 標題頁停留 6 秒
       : autoplayDelay // 得獎者停留設定時間
 
     const autoplay = setTimeout(() => {
@@ -180,8 +180,8 @@ export function UnifiedAwardCarousel({
                 className="embla__slide flex-[0_0_100%] min-w-0 relative"
                 style={{
                   animation: isActive
-                    ? 'carousel-dramatic-smooth-enter 0.6s ease-out forwards'
-                    : 'carousel-dramatic-smooth-exit 0.6s ease-out forwards',
+                    ? 'carousel-dramatic-smooth-enter 1.2s ease-out forwards'
+                    : 'carousel-dramatic-smooth-exit 1.2s ease-out forwards',
                   opacity: isActive ? 1 : 0,
                   willChange: 'transform, opacity',
                   pointerEvents: isActive ? 'auto' : 'none',
