@@ -432,7 +432,7 @@ export default function AwardPresentation() {
         return <RockAwardTitleSlide />
 
       case 'rock-award-carousel':
-        // 磐石獎輪播 - 取得 ID 8-13 的得獎者
+        // 磐石獎輪播 - 投影片18-24頁 (ID 8-13的得獎者，共6位)
         const rockWinners = awardData.winners.filter(w => w.id >= 8 && w.id <= 13)
         return <AwardCarousel winners={rockWinners} awardType="rock" autoplayDelay={5000} />
 

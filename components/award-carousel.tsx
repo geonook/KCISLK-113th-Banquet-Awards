@@ -17,11 +17,14 @@ export function AwardCarousel({ winners, awardType, autoplayDelay = 5000 }: Awar
   const [isPaused, setIsPaused] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // 設定 Embla Carousel
+  // 設定 Embla Carousel with smooth animations
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
     skipSnaps: false,
+    duration: 30, // 流暢的轉場速度 (30ms)
+    dragFree: false,
+    containScroll: "trimSnaps",
   })
 
   // 監聽當前投影片索引
@@ -95,13 +98,22 @@ export function AwardCarousel({ winners, awardType, autoplayDelay = 5000 }: Awar
   }
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* Embla Carousel Container */}
+    <div className="relative w-full h-screen overflow-hidden bg-black">
+      {/* Embla Carousel Container with smooth transitions */}
       <div className="embla h-full" ref={emblaRef}>
-        <div className="embla__container h-full flex">
-          {winners.map((winner) => (
-            <div key={winner.id} className="embla__slide flex-[0_0_100%] min-w-0">
-              {renderAwardSlide(winner)}
+        <div className="embla__container h-full flex transition-transform duration-700 ease-out">
+          {winners.map((winner, index) => (
+            <div
+              key={winner.id}
+              className="embla__slide flex-[0_0_100%] min-w-0 relative"
+              style={{
+                opacity: index === currentIndex ? 1 : 0.3,
+                transition: 'opacity 0.7s ease-in-out',
+              }}
+            >
+              <div className="w-full h-full transform transition-all duration-700 ease-out">
+                {renderAwardSlide(winner)}
+              </div>
             </div>
           ))}
         </div>
