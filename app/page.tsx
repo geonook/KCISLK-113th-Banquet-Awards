@@ -18,7 +18,7 @@ import { FullscreenNavigation } from "../components/fullscreen-navigation"
 import { PresentationContainer } from "../components/presentation-container"
 import { awardLoader } from "../lib/award-loader"
 import { EnhancedPhotoManagement } from "../components/enhanced-photo-management"
-import { AwardCarousel } from "../components/award-carousel"
+import { UnifiedAwardCarousel } from "../components/unified-award-carousel"
 import { Settings } from "lucide-react"
 import type { AwardData, Winner } from "../types/award"
 
@@ -34,9 +34,8 @@ type SlideType =
   | '15-year-service-title'
   | '10-year-service-title'
   | 'rock-award-title'
-  | 'rock-award-carousel'
   | 'excellence-award-title'
-  | 'excellence-award-carousel'
+  | 'unified-award-carousel'
   | 'choir-performance'
   | 'dining-main'
   | 'second-half-title'
@@ -130,8 +129,6 @@ export default function AwardPresentation() {
     })
 
     configs.push(
-      // 磐石獎輪播 - 回顧所有磐石獎得獎者
-      { type: 'rock-award-carousel' },
       // 19. 串場表演 (合唱)
       { type: 'choir-performance' },
       // 20. 用餐 (主頁變體)
@@ -169,8 +166,8 @@ export default function AwardPresentation() {
     })
 
     configs.push(
-      // 優質獎輪播 - 回顧所有優質獎得獎者
-      { type: 'excellence-award-carousel' },
+      // 統一獎項輪播 - 完整回顧磐石獎與優質獎（含標題頁）
+      { type: 'unified-award-carousel' },
       // 59. 串場表演 (舞蹈)
       { type: 'dance-performance' },
       // 60. 歡敬時間 (主頁變體)
@@ -431,18 +428,20 @@ export default function AwardPresentation() {
       case 'rock-award-title':
         return <RockAwardTitleSlide />
 
-      case 'rock-award-carousel':
-        // 磐石獎輪播 - 投影片18-24頁 (ID 8-13的得獎者，共6位)
-        const rockWinners = awardData.winners.filter(w => w.id >= 8 && w.id <= 13)
-        return <AwardCarousel winners={rockWinners} awardType="rock" autoplayDelay={5000} />
-
       case 'excellence-award-title':
         return <ExcellenceAwardTitleSlide />
 
-      case 'excellence-award-carousel':
-        // 優質獎輪播 - 取得 ID 14-50 的得獎者
+      case 'unified-award-carousel':
+        // 統一獎項輪播 - 磐石獎標題 + 6位 + 優質獎標題 + 37位 (共45張)
+        const rockWinners = awardData.winners.filter(w => w.id >= 8 && w.id <= 13)
         const excellenceWinners = awardData.winners.filter(w => w.id >= 14 && w.id <= 50)
-        return <AwardCarousel winners={excellenceWinners} awardType="excellence" autoplayDelay={5000} />
+        return (
+          <UnifiedAwardCarousel
+            rockWinners={rockWinners}
+            excellenceWinners={excellenceWinners}
+            autoplayDelay={5000}
+          />
+        )
 
       case 'first-half-award':
         if (config.winnerIndex !== undefined) {
