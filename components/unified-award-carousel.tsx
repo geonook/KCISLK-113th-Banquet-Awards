@@ -40,12 +40,12 @@ export function UnifiedAwardCarousel({
 
   const totalItems = carouselItems.length
 
-  // 設定 Embla Carousel with dramatic 3D animations
+  // 設定 Embla Carousel with instant switching for smooth CSS animations
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
     skipSnaps: false,
-    duration: 50, // 增加過渡時間以配合浮誇動畫
+    duration: 0, // 瞬間切換，完全由 CSS 動畫控制
     dragFree: false,
     containScroll: "trimSnaps",
   })
@@ -173,8 +173,6 @@ export function UnifiedAwardCarousel({
         <div className="embla__container h-full flex">
           {carouselItems.map((item, index) => {
             const isActive = index === currentIndex
-            const isPrev = index === (currentIndex - 1 + totalItems) % totalItems
-            const isNext = index === (currentIndex + 1) % totalItems
 
             return (
               <div
@@ -182,18 +180,22 @@ export function UnifiedAwardCarousel({
                 className="embla__slide flex-[0_0_100%] min-w-0 relative"
                 style={{
                   animation: isActive
-                    ? 'carousel-dramatic-enter 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
-                    : isPrev || isNext
-                    ? 'carousel-dramatic-exit 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
-                    : 'none',
+                    ? 'carousel-dramatic-smooth-enter 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards'
+                    : 'carousel-dramatic-smooth-exit 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
                   opacity: isActive ? 1 : 0,
                   transformStyle: 'preserve-3d',
+                  willChange: 'transform, opacity, filter',
+                  pointerEvents: isActive ? 'auto' : 'none',
                 }}
               >
-                <div className="w-full h-full" style={{
-                  transformStyle: 'preserve-3d',
-                  backfaceVisibility: 'hidden',
-                }}>
+                <div
+                  className="w-full h-full"
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    backfaceVisibility: 'hidden',
+                    transform: 'translate3d(0, 0, 0)', // GPU 加速 hack
+                  }}
+                >
                   {renderSlide(item)}
                 </div>
               </div>

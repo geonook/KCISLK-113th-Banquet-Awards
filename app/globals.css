@@ -308,41 +308,41 @@
   }
 
   /* Smooth fade transition for carousel */
-  /* 浮誇的 3D 轉場動畫 - 進場效果 */
-  @keyframes carousel-dramatic-enter {
+  /* 浮誇且流暢的 3D 轉場動畫 - 進場效果 */
+  @keyframes carousel-dramatic-smooth-enter {
     0% {
       opacity: 0;
-      transform: perspective(1200px) rotateY(-25deg) scale(0.8) translateZ(-200px);
-      filter: blur(10px) brightness(0.3);
+      transform: perspective(1500px) rotateY(-35deg) rotateX(10deg) scale(0.7) translate3d(-150px, 30px, -300px);
+      filter: blur(5px) brightness(0.5) saturate(0.7);
     }
-    50% {
-      opacity: 0.5;
-      transform: perspective(1200px) rotateY(-8deg) scale(0.95) translateZ(-50px);
-      filter: blur(3px) brightness(0.7);
+    40% {
+      opacity: 0.6;
+      transform: perspective(1500px) rotateY(-10deg) rotateX(3deg) scale(0.95) translate3d(-20px, 5px, -50px);
+      filter: blur(2px) brightness(0.8) saturate(0.9);
     }
     100% {
       opacity: 1;
-      transform: perspective(1200px) rotateY(0deg) scale(1) translateZ(0);
-      filter: blur(0px) brightness(1);
+      transform: perspective(1500px) rotateY(0deg) rotateX(0deg) scale(1) translate3d(0, 0, 0);
+      filter: blur(0px) brightness(1) saturate(1);
     }
   }
 
-  /* 浮誇的 3D 轉場動畫 - 離場效果 */
-  @keyframes carousel-dramatic-exit {
+  /* 浮誇且流暢的 3D 轉場動畫 - 離場效果 */
+  @keyframes carousel-dramatic-smooth-exit {
     0% {
       opacity: 1;
-      transform: perspective(1200px) rotateY(0deg) scale(1) translateZ(0);
-      filter: blur(0px) brightness(1);
+      transform: perspective(1500px) rotateY(0deg) rotateX(0deg) scale(1) translate3d(0, 0, 0);
+      filter: blur(0px) brightness(1) saturate(1);
     }
-    50% {
-      opacity: 0.5;
-      transform: perspective(1200px) rotateY(8deg) scale(0.95) translateZ(-50px);
-      filter: blur(3px) brightness(0.7);
+    40% {
+      opacity: 0.6;
+      transform: perspective(1500px) rotateY(10deg) rotateX(-3deg) scale(0.95) translate3d(20px, -5px, -50px);
+      filter: blur(2px) brightness(0.8) saturate(0.9);
     }
     100% {
       opacity: 0;
-      transform: perspective(1200px) rotateY(25deg) scale(0.8) translateZ(-200px);
-      filter: blur(10px) brightness(0.3);
+      transform: perspective(1500px) rotateY(35deg) rotateX(-10deg) scale(0.7) translate3d(150px, -30px, -300px);
+      filter: blur(5px) brightness(0.5) saturate(0.7);
     }
   }
 
